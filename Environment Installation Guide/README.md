@@ -138,13 +138,13 @@ Verify that the program was installed properly by searching for "Postman" in you
 
 ### Step 11: Install PostgreSQL
 
-In order to install PostgreSQL, we will NOT be using Scoop as we require PostgreSQL 10, a version that is not currently supported by Scoop. That said, we will manually download the PostgreSQL installer visiting the [official website](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads).
+In order to install PostgreSQL, we will NOT be using Scoop as we require at least version PostgreSQL 10, a version that is not currently supported by Scoop. That said, we will manually download the PostgreSQL installer visiting the [official website](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads).
 
 Once you've navigated to the website, you should see the following:
 
 ![Postgres Download Home](./images/postgres-download.PNG)
 
-Please look at the row for **version 10.13** as we will downloading this version. Select the download link which corresponds with your system and click it.
+Please look at the row for **version 10.18** (if not available, select the latest version of PostgreSQL 10.xx) as we will downloading this version. Select the download link which corresponds with your system and click it.
 
 You'll then be prompted to save the file. Click "Save File".
 
