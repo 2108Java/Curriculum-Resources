@@ -51,5 +51,33 @@ public class Calculator {
 		
 		return total;
 	}
+	
+	
+	public int betterSumMethod(int[] arrayOfInts){
+		
+		//I want to create a for loop that traverses the int array 
+		
+		int total = 0;
+		
+		for(int i = 0; i < arrayOfInts.length ; i++) {
+			total += arrayOfInts[i]; 
+		}
+		
+		
+		return total;
+	}
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

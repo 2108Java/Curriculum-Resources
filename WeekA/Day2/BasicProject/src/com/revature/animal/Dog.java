@@ -8,6 +8,16 @@ public class Dog {
 	public boolean vaxxed;
 	
 	
+	
+	
+	public Dog(String dogName, String dogBreed, int dogLegs, boolean isVaxxed) {
+		this.name = dogName;
+		this.breed = dogBreed;
+		this.legs = dogLegs;
+		this.vaxxed = isVaxxed;
+	}
+	
+	
 	//It can bark 
 	//public method, that does not return anything and has no arguments for us to pass in. 
 	
