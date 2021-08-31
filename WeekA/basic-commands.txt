@@ -1,0 +1,27 @@
+<command> <argument> <modifier>
+
+cd - changing directory 
+(by default if no argument is provided, we navigate to the home directory)
+cd .. - navigates to the parent folder 
+cd <folder> - navigate to the folder 
+
+ls - list the files of the folder/directory
+
+pwd - tells us what folder we're in
+
+touch - creates a file
+
+mkdir - creates a folder
+
+rm - removes files
+
+rmdir - removes folders
+
+scoop is a package manager, and we'll be using it to install files into our
+	system. (we'll be using different package managers in different systems)
+
+java - executes class files (.class)
+
+javac - compiles java code (human readable .java files) into bytecode (.class)
+
+javap - tells us what the JVM "sees" when executing the file. 
