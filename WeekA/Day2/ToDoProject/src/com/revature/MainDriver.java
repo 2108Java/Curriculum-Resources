@@ -57,7 +57,6 @@ public class MainDriver {
 		
 	}
 	
-	
 	public static Task[] addTaskToTaskArray(Task[] taskList, Task newTask) {
 		
 		boolean listFull = true;
@@ -95,6 +94,10 @@ public class MainDriver {
 		}
 		
 		return listFull;
+	}
+	
+	public static Task[] deleteTask(Task[] taskList, Scanner sc) {
+		return null;
 	}
 	
 	public static void main(String[] args) {
