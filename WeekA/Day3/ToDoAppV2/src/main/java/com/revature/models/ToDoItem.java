@@ -38,7 +38,7 @@ public class ToDoItem {
 	
 	public ToDoItem(int id, String title, String description) {
 		
-		System.out.println("Inside args constructor");
+//		System.out.println("Inside args constructor");
 		this.id = id;
 		this.title = title;
 		this.description = description;
@@ -47,7 +47,7 @@ public class ToDoItem {
 	
 	public ToDoItem(int id, String title, String description, boolean isComplete) {
 		
-		System.out.println("Inside all args constructor");
+//		System.out.println("Inside all args constructor");
 		
 		this.id = id;
 		this.title = title;
@@ -57,7 +57,7 @@ public class ToDoItem {
 	
 public ToDoItem(int id, String title, String description, boolean isComplete, String useless) {
 		
-		System.out.println("Inside all args constructor");
+//		System.out.println("Inside all args constructor");
 		
 		this.id = id;
 		this.title = title;

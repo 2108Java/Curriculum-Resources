@@ -1,33 +1,29 @@
 package com.revature;
 
-import com.revature.models.ToDoItem;
+import com.revature.presentation.MainMenu;
+import com.revature.repo.ToDoItemsDummyDatabase;
+import com.revature.service.ToDoService;
 
 public class MainDriver {
 	
 	//Scopes vs access modifiers
 	// Scopes is with regards to variables 
 		//Scope defines where the variable "exists"
-	//Access modifers is about permission to interact with that variable or method
+	//Access modifiers is about permission to interact with that variable or method
 
-	
 	
 	public static void main(String[] args) {
 
 		
-		//<datatype> <variable> = new <constructor> 
+		ToDoItemsDummyDatabase database = new ToDoItemsDummyDatabase();
 		
-		ToDoItem task = new ToDoItem();
-		ToDoItem task2 = new ToDoItem("Homework","Lots and lots of hwk to do");
-		ToDoItem task3 = new ToDoItem(4, "Swimming", "Getting some exercise", false);
-	
+		ToDoService service = new ToDoService(database);
 		
-		task.getId();
+		MainMenu menu = new MainMenu(service);
 		
-		task.setTitle("Homework");
-		System.out.println(task.getTitle());
+		menu.display();
 		
-		task.setDescription("Complete the Math and English hwk");
-		System.out.println(task.getDescription());
+		
 
 	}
 
