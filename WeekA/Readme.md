@@ -1,4 +1,4 @@
-# Week 1 Java Topics
+# Java Topics
 
 - [Java Features](https://docs.oracle.com/javase/specs/jls/se8/html/jls-1.html)
   - Platform Independence: Write Once, Run Anywhere
@@ -66,5 +66,44 @@
   - Roles
   - Process
   - Benefits
+  
+  
+  # SQL Topics
+
+- Tools
+  - [PostgreSQL](https://www.postgresql.org/)
+  - Database administration
+    - CLI, Client tool, IDE plugin
+  - [AWS RDS](https://aws.amazon.com/rds/)
+
+- [SQL: Structured Query Language](https://www.postgresqltutorial.com/)
+  - [Dialects, Vendors, Sublanguages](https://www.tutorialspoint.com/sql/sql-overview.htm)
+  - Keys
+    - Candidate
+    - Primary
+    - Composite
+    - Foreign
+  - DDL: Data Definition Language
+    - Create, Alter, Drop, Truncate
+  - DML: Data Manipulation Language
+    - Select, Insert, Update, Delete
+    - DQL: Data Query Language
+  - Select clauses
+    - Where
+    - Alias, And, Or
+    - Subqueries
+    - Group By, Having, Order By
+
+- 
+
+- [JDBC: Java Database Connectivity](https://docs.oracle.com/javase/tutorial/jdbc/basics/index.html)
+  - Set-up/Creating a Connection
+  - DriverClass, Connection
+  - Statement, PreparedStatement, Callable Statement
+  - ResultSet
+  - Design Pattern: Data Access Object
+  - Datasource: Properties, Environment Variables, JDBC URL
+
+
 
 
