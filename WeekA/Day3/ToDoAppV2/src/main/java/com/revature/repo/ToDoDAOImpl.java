@@ -17,8 +17,33 @@ public class ToDoDAOImpl implements ToDoDAO {
 
 	
 	public boolean insertToDo(ToDoItem todo) {
-		// TODO Auto-generated method stub
-		return false;
+
+		boolean success = false;
+		//1. Connect to database!
+		try(Connection connection = DriverManager.getConnection(url,username,password)){
+			
+			//2. Write a SQL statement String
+			
+			String sql = "INSERT INTO todo_table VALUES (?,?,?,?)";
+			
+			PreparedStatement ps = connection.prepareStatement(sql);
+			
+			ps.setInt(1, todo.getId());
+			ps.setString(2, todo.getTitle());
+			ps.setString(3, todo.getDescription());
+			ps.setBoolean(4, todo.isComplete());
+			
+			ps.execute();
+			
+			success = true;
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		
+		return success;
 	}
 
 	
@@ -36,6 +61,8 @@ public class ToDoDAOImpl implements ToDoDAO {
 	
 	public ToDoItem[] selectAllToDo() {
 
+		ToDoItem[] itemArray = new ToDoItem[10];
+		
 		//Establish a connection 
 		//Establishing a connection is risky, so we're going to have to prepare for an exception
 		
@@ -47,14 +74,28 @@ public class ToDoDAOImpl implements ToDoDAO {
 			
 			ResultSet rs = ps.executeQuery();
 			
-			System.out.println(rs);
+			int i = 0;
+			
+			while(rs.next()) {
+				
+				//looping through all the rows until there are no rows!
+				
+				itemArray[i] = new ToDoItem(rs.getInt("id"),
+									rs.getString("title"),
+									rs.getString("description"),
+									rs.getBoolean("complete"));
+				i++;
+				
+			}
+			
+			
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		return null;
+		return itemArray;
 	}
 
 	
@@ -77,7 +118,10 @@ public class ToDoDAOImpl implements ToDoDAO {
 
 	
 	public boolean completeToDo(int id) {
-		// TODO Auto-generated method stub
+
+		String sql = "UPDATE table todo_table SET complete = ? WHERE id = ?";
+		
+		//ps.setBoolean(1, true);
 		return false;
 	}
 

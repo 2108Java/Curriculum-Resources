@@ -1,7 +1,9 @@
 package com.revature;
 
 import com.revature.presentation.MainMenu;
-import com.revature.repo.ToDoItemsDummyDatabase;
+import com.revature.repo.ExerciseExampleToDoDAO;
+import com.revature.repo.ToDoDAO;
+import com.revature.repo.ToDoDAOImpl;
 import com.revature.service.ToDoService;
 
 public class MainDriver {
@@ -15,7 +17,8 @@ public class MainDriver {
 	public static void main(String[] args) {
 
 		
-		ToDoItemsDummyDatabase database = new ToDoItemsDummyDatabase();
+//		ToDoItemsDummyDatabase database = new ToDoItemsDummyDatabase();
+		ToDoDAO database = new ExerciseExampleToDoDAO();
 		
 		ToDoService service = new ToDoService(database);
 		
