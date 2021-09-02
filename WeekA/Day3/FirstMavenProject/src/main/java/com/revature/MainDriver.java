@@ -35,6 +35,9 @@ public class MainDriver {
 		 * 		For homogenous inheritance we use the keyword: "extends" 
 		 * 		class -> class 
 		 * 
+		 * 		For hetrogenous inheritance we use the keyword: "implements"
+		 * 		interface -> class 
+		 * 
 		 * 		In Java we cannot inherit from multiple classes. 
 		 * 
 		 * 
@@ -57,7 +60,17 @@ public class MainDriver {
 		 *					Changing the number of parameters
 		 *					Changing the datatypes of the parameter
 		 *					Changing the order of the paramenters
-		 *		Abstraction 
+		 *		
+		 *		Abstraction:
+		 *			Not real 
+		 *			Vague but connecting 2 ideas together. 
+		 *			Relationships from their concrete implementation. 
+		 *			Open to interpretation 
+		 *			Hide the implementation	
+		 *
+		 *			The concept of hiding implementation to show functionality. 
+		 *			In Java we achieve this using Interfaces and Abstract classes. 
+		 *			(Full abstraction and partial abstraction)
 		 *
 		 *		Encapsulation 
 		 *			Is the practice of restricting access to resources within our classes and objects. 

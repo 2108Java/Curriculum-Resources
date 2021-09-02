@@ -15,10 +15,10 @@ create table fruits(
 );
 
 create table todo_table(
-	id int,
-	title varchar(20),
-	description varchar(120),
-	complete boolean 
+	id int primary key,
+	title varchar(20) not null,
+	description varchar(120) not null,
+	complete boolean not null
 );
 
 --ALTER 

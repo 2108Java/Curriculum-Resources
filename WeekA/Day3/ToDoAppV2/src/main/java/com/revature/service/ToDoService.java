@@ -1,13 +1,13 @@
 package com.revature.service;
 
 import com.revature.models.ToDoItem;
-import com.revature.repo.ToDoItemsDummyDatabase;
+import com.revature.repo.ToDoDAO;
 
 public class ToDoService {
 	
-	ToDoItemsDummyDatabase database;
+	ToDoDAO database;
 	
-	public ToDoService(ToDoItemsDummyDatabase database) {
+	public ToDoService(ToDoDAO database) {
 		this.database = database;
 	}
 	
@@ -15,20 +15,20 @@ public class ToDoService {
 	public ToDoItem[] getAllItems() {
 		
 		
-		return database.getAllToDos();
+		return database.selectAllToDo();
 	}
 	
 	public ToDoItem[] getAllCompletedItems() {
-		return database.getAllCompletedToDos();
+		return database.selectAllToDoComplete();
 	}
 	
 	public ToDoItem[] getAllIncompleteItems() {
-		return database.getAllIncompleteToDos();
+		return database.selectAllToDoIncomplete();
 	}
 	
 	public void addListItem(ToDoItem todo) {
 			
-		if(database.createAToDo(todo)) {
+		if(database.insertToDo(todo)) {
 			//returns true? successful opertaion 	
 			System.out.println("Successfully added an item to the task list");
 			
@@ -41,7 +41,7 @@ public class ToDoService {
 	
 	public void deleteListItem(int id) {
 		
-		if(database.deleteAToDo(id)) {
+		if(database.deleteToDo(id)) {
 			System.out.println("Successfullly deleted item");
 		}else {
 			System.out.println("Unable to delete!");
