@@ -1,5 +1,9 @@
 package com.example;
 
+import com.example.cars.Honda;
+import com.example.cars.Mercedes;
+import com.example.cars.Toyota;
+import com.example.cars.Truck;
 import com.example.models.Athlete;
 import com.example.models.Car;
 import com.example.models.Human;
@@ -11,6 +15,10 @@ public class MainDriver {
 		System.out.println(car);
 		
 		Car newCar = new Car();
+		
+	}
+	
+	public static void truckMethod(Truck t) {
 		
 	}
 	
@@ -96,6 +104,25 @@ public class MainDriver {
 		
 		
 		
+		
+		//ABSTRACTION PORTION
+		
+		
+		Truck t = new Honda();
+		t.accelerate();
+		t.automaticWindow();
+		
+		truckMethod(t);
+		
+		Mercedes t2 = new Mercedes();
+		
+		
+		t = new Mercedes();
+		
+		truckMethod(t);
+		
+		t = new Toyota();
+		t.accelerate();
 		
 	}
 
