@@ -1,7 +1,9 @@
 package com.revature;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 import java.util.Set;
 
@@ -237,21 +239,21 @@ public class MainDriver {
 	 */
 		
 		
-	Queue<String> queueString = new LinkedList<>();
-	
-	
-	queueString.add("First element");
-	queueString.add("Second element");
-	queueString.add("Second element");
-	queueString.add("Second element");
-	queueString.add("Second element");
-	queueString.add("Second element");
-	
-	
-	System.out.println(queueString.peek());
-	System.out.println(queueString.peek());
-	System.out.println(queueString.peek());
-	System.out.println(queueString.peek());
+//	Queue<String> queueString = new LinkedList<>();
+//	List<String> listOfStrings = new LinkedList<>();
+//	
+//	queueString.add("First element");
+//	queueString.add("Second element");
+//	queueString.add("Second element");
+//	queueString.add("Second element");
+//	queueString.add("Second element");
+//	queueString.add("Second element");
+//	
+//	
+//	System.out.println(queueString.peek());
+//	System.out.println(queueString.peek());
+//	System.out.println(queueString.peek());
+//	System.out.println(queueString.peek());
 //	System.out.println(queueString.poll());// select the "head" of the queue and removes it from the queue
 	
 	//	System.out.println(queueString.remove());
@@ -272,8 +274,38 @@ public class MainDriver {
 		
 		
 		
+		Queue<String> queueString = new LinkedList<>();
+//		queueString = new ArrayList<>();
+		
+		List<String> listOfStrings = new LinkedList<>();
+		listOfStrings = new ArrayList<>();
+		
+		LinkedList<String> linkedList = new LinkedList<>();
+		
+		linkedList.poll();
+		linkedList.add("In My linkedlist");
+		
+		queueString.add("Hello");
+		listOfStrings.add("Hello again");
+		
+//		queueString.get(0);
+		listOfStrings.get(0);
+		
+		queueString.poll();
+//		listOfStrings.poll();
 		
 		
+		/*
+		 * ArrayList: 
+		 * 		A resizable array (mutable) compared to the built in array inside JAva. 
+		 * 
+		 * LinkedList:
+		 * 	
+		 * 		Consists of nodes, each node will store a value and a 'pointer' to the next
+		 * 		node. Alllows for easier addition and removal for entries (Arraylist has to 
+		 * 		resize the entire structure). However, this requires more memory overhead, 
+		 * 		each node holds data + memory address to another node). 
+		 */
 		
 		
 		
