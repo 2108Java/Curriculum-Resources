@@ -24,5 +24,5 @@ public interface ToDoDao { //Interacts with our DB
 	
 	
 	//INSERT 
-	public boolean createToDoItem(ToDoItem todoItem);
+	public boolean insertToDoItem(ToDoItem todoItem);
 }

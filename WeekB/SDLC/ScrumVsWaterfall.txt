@@ -1,0 +1,44 @@
+Different ways to implement the SDLC: 
+
+Waterfall: 
+	Most basic SDLC. 
+	Very linear, one step at a time. 
+	top to bottom. 
+
+	In a waterfall SDLC, we do all the requirements in one go. 
+	We do all the planning in one go. 
+	We do all the desgning in one go. 
+	We do all teh building in one go. 
+	...
+	....
+	
+	Downsides: 
+		Not efficient, we can waste a lot of time if requirements 
+		change or fatal errors occur. 
+
+	Advantages: 
+		Simple
+
+
+
+Scrum: 
+	Sprint: 
+		Short period of time that is fixed(A month), a project will have multiple 
+		sprints. During a sprint we do all of the SDLC steps and the benefit is 
+		that we get feedback more continously and more often. 
+		Spring planning:
+			Planning on what do for the sprint
+		Sprint retrospetive: 
+			Identifiying any issues or what went well with last weeks sprint. 
+		
+
+	Scrum master: 
+		Responsible for leading the daily scrum and ensuring every member of
+		the team has tasks. 
+	Daily scrum:
+		Daily short meeting (typically 10-15 min). Each member must communicate, 
+		what they have done, what they will do and any blockers they're having. 
+	
+
+"Scrumban":
+	We use a kanban board on top of scrum. 
