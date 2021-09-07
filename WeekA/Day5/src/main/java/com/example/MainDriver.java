@@ -110,7 +110,7 @@ public class MainDriver {
 		
 		Truck t = new Honda();
 		t.accelerate();
-		t.automaticWindow();
+//		t.automaticWindow();
 		
 		truckMethod(t);
 		
