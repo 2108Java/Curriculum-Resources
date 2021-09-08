@@ -1,0 +1,133 @@
+
+<!--
+
+    This is a comment in HTML (the browser will not interpret this text)
+
+    HTML: 
+        Hyper Text Markup Language
+
+    What is it?
+        A skeleton for all webpages. All webpages are built on html documents
+-->
+
+<!-- <!DOCTYPE html>  This is a psuedo tag telling the browser that this document is html-->
+
+<html> <!-- Root tag for html file-->
+
+    <head> <!-- All the meta data, infromation that is not rendered (directly)-->
+        <meta charset="UTF-8">
+
+    </head>
+
+    <body> <!-- Contain all the information that will be rendered on the webpage -->
+
+            <!-- In html we store everything in tags, including text-->
+
+            <!--Headline tags-->
+            <header>
+                <h1 style = "color: chartreuse;">This is inside a headline tag!</h1>
+                <h2> This is another tag! Also h</h2>
+    
+                <h6> This is the smallest headline tag that we can use!</h6>
+            </header>
+            
+
+            <!-- Paragraph tags-->
+            <p>Inside a paragraph tag!</p>
+
+            <div id = "blockSection"> <!-- Allows us to categorise/contain a collection of elements/tags-->
+                <p> This is another paragraph</p>
+
+                <p> One <span>more paragraph </span> for fun!</p>
+            </div>
+            
+            <!--
+                Elements/tags can behave differently based on the attributes they're provided. 
+
+            -->
+
+            <!--Images -->
+            <img src="https://th.bing.com/th/id/OIP.QN74kQAtOUV1kLu1xfxi1gHaJ4?pid=ImgDet&rs=1"
+            alt="A really adorable image"
+            title = "A puppy"> <!--Image tag, we have to use attributes to make it work properly!-->
+
+            <!-- Creates a "window" to render images or videos-->
+            <iframe src="https://th.bing.com/th/id/OIP.QN74kQAtOUV1kLu1xfxi1gHaJ4?pid=ImgDet&rs=1"
+                height="400"
+                width="400">
+            </iframe>
+
+            <!-- Links -->
+            <a href="https://www.google.com/">This is an anchor tag!</a>
+            <a href="https://www.google.com/search?q=tomato">This is an anchor tag! Tomato</a>
+            <a href="https://www.google.com/search?q=kiwi">This is an anchor tag! Kiwi </a>
+            <a href="https://www.google.com/search?q=apple">This is an anchor tag! Apple</a>
+
+
+            <!--Lists -->
+
+            <ol> <!-- Ordered List-->
+                  <li>Here's a list with a single item!</li>  
+                  <li>Here's another element</li>
+            </ol>
+
+            <ul> <!--unordered list-->
+                <li>Here's a list with a single item!</li>  
+                  <li>Here's another element</li>
+            </ul>
+
+
+            <!--Table -->
+
+            <table border="8">
+                <tr>
+                    <th>Left</th>
+                    <th>Right</th>
+                </tr>
+                <tr>
+                    <td> Number 1</td>
+                    <td> Number 2</td>
+                    <td> Number 3</td>
+                </tr>
+                <tr>
+                    <td> Number 1</td>
+                    <td> Number 2</td>
+                    <td> Number 3</td>
+                </tr>
+                <tr>
+                    <td> Number 1</td>
+                    <td> Number 2</td>
+                    <td> Number 3</td>
+                </tr>
+
+
+            </table>
+
+            <!--Forms -->
+            
+            <div style="background-color: brown;">
+                <p>This is the form to input into google!</p>
+                <form action = "https://duckduckgo.com/?" method="GET">
+
+                    <input type="text" name="q">
+                    <input type="text" name="b">
+                    <input type="text" name="randomVariable">
+                    <input type="submit" value = "This is my submit button!">
+                </form>
+            </div>
+            
+            
+
+
+            <ol> <!-- Ordered List-->
+                <li><a href="https://www.google.com/search?q=tomato">This is an anchor tag! Tomato</a></li>  
+                <li><a href="https://www.google.com/search?q=kiwi">This is an anchor tag! Kiwi </a></li>
+                <li><a href="https://www.google.com/search?q=apple">This is an anchor tag! Apple</a></li>
+            </ol>
+
+
+
+    </body>
+
+
+</html>
