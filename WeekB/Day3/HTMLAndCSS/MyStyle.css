@@ -1,0 +1,44 @@
+body{
+    background-color: red;
+}
+
+
+#specialId{
+    background-color: violet;
+}
+
+.class1{
+    background-color: gold;
+}
+
+
+h1.class1{
+    /*
+        Target all h1 tags that have a class1 associated with them
+    */
+
+    text-align: center;
+}
+
+
+div.class2 > .otherClass {
+    /*
+    I'll let you guess what this means!
+    */
+}
+
+/*
+This is a comment in css
+*/
+
+/*
+CSS structure: 
+
+    selector{
+        property-1: value-1;
+        property-2: value-2;
+        .
+        .
+        .
+    }
+*/

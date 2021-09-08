@@ -16,19 +16,58 @@
 
     <head> <!-- All the meta data, infromation that is not rendered (directly)-->
         <meta charset="UTF-8">
+        <title>My First Webpage!</title>
+
+        <!-- <style>
+
+            body{
+                background-color: aqua;
+            }
+
+            p {
+                background-color: blue;
+            }
+
+            div{
+                background-color: deeppink;
+            }
+
+        </style> -->
+
+        <!--
+            CSS: Cascading Stye sheets. 
+
+            Multiple ways to stylize our webpage, each being progressively better. 
+
+            Inline Styling: 
+                We define the style of an element at the tag level. 
+                We have to define every single tag, which genereates a lot more code 
+                    and does not offer any kind of reusability!
+
+            Internal stylesheet: 
+                We define a style inside of our head tag, makes it slightly more reusable
+                (reusable between tags) but not between html documents. 
+
+            External stylesheet: 
+                We define a style sheet outside of our html page!
+
+        -->
+
+        <link rel="stylesheet" href="MyStyle.css">
+        <link rel="stylesheet" href="MyStyle2.css">
 
     </head>
 
-    <body> <!-- Contain all the information that will be rendered on the webpage -->
+    <body > <!-- Contain all the information that will be rendered on the webpage -->
 
             <!-- In html we store everything in tags, including text-->
 
             <!--Headline tags-->
-            <header>
-                <h1 style = "color: chartreuse;">This is inside a headline tag!</h1>
+            <header style="color: chocolate; background-color: black;">
+                <h1 class="class1">This is inside a headline tag!</h1>
                 <h2> This is another tag! Also h</h2>
     
-                <h6> This is the smallest headline tag that we can use!</h6>
+                <h6 class="class1"> This is the smallest headline tag that we can use!</h6>
             </header>
             
 
@@ -36,9 +75,9 @@
             <p>Inside a paragraph tag!</p>
 
             <div id = "blockSection"> <!-- Allows us to categorise/contain a collection of elements/tags-->
-                <p> This is another paragraph</p>
+                <p id = "specialId"> This is another paragraph</p>
 
-                <p> One <span>more paragraph </span> for fun!</p>
+                <p class="class1"> One <span>more paragraph </span> for fun!</p>
             </div>
             
             <!--
