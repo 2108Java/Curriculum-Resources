@@ -1,0 +1,11 @@
+@charset "ISO-8859-1";
+
+#fruit-table{
+    color: brown;
+    border: 1cm;
+}
+
+body{
+    color: white;
+    background-color: black;
+}
