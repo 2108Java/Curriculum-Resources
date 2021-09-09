@@ -1,0 +1,49 @@
+# Week 3 Http Topics
+
+- [HTTP](https://tools.ietf.org/html/rfc7231)
+  - Request vs Response
+  - [Verbs:](https://tools.ietf.org/html/rfc7231#section-4)
+    - Get vs Post
+  - URI
+  - Body
+
+- [HTML](https://www.w3schools.com/html/)
+  - HTML5
+  - [Forms:](https://www.w3schools.com/html/html_forms.asp)
+    - Action
+    - Inputs
+    - Submit
+  - Elements:
+    - Attributes
+    - Id
+    - Class
+  - Head tags: meta, title, link
+  - Body tags: div, a, p, h1-h6
+  - Style & Script tags
+- [DOM - Document Object Model](https://www.w3schools.com/whatis/whatis_htmldom.asp)
+
+- [CSS](https://www.w3schools.com/css/)
+  - CSS3
+  - Cascade priority:
+    - external
+    - internal
+    - in-line
+  - [Box Model](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model)
+  - Id vs Class tag
+
+- [JavaScript](https://www.w3schools.com/js/)
+  - [EcmaScript 6](https://www.ecma-international.org/ecma-262/6.0/)
+  - Variables:
+    - Scopes
+    - var, let, const
+    - hoisting
+  - Objects, arrays, functions
+  - JSON stringify & parse
+  - [DOM API](https://www.w3schools.com/js/js_htmldom.as
+  
+- [Javalin](https://javalin.io/documentation)
+  - Starting a Javalin Application 
+  - [Embedded Jetty Server](https://www.eclipse.org/jetty/documentation/jetty-9/index.html)
+  - Handler
+  - Retrieving information from forms
+  
