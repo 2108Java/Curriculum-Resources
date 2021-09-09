@@ -39,7 +39,7 @@
     - hoisting
   - Objects, arrays, functions
   - JSON stringify & parse
-  - [DOM API](https://www.w3schools.com/js/js_htmldom.as
+  - [DOM API](https://www.w3schools.com/js/js_htmldom.as)
   
 - [Javalin](https://javalin.io/documentation)
   - Starting a Javalin Application 
