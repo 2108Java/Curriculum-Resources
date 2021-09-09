@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name generator!</title>
+</head>
+<body>
+
+    <div>
+        <h1>Creating a name!</h1>
+        <form action="http://localhost:9000/name?" method="GET">
+            <input type="text" name="name">
+            <input type="submit">
+    
+        </form>
+    </div>
+
+    <div>
+        <h1>Creating a fruit!</h1>
+        <form action="http://localhost:9000/addFruit?" method="GET">
+            <input type="text" name="fruitName">
+            <input type="number" name = "fruitId">
+            <input type="submit">
+    
+        </form>
+
+    </div>
+
+    <div>
+        <a href="http://localhost:9000/fruits">A link to all the fruits!</a>
+    </div>
+    
+    <div>
+        <h1>Deleting a fruit!</h1>
+        <form action="http://localhost:9000/deleteFruit?" method="GET">
+            <input type="text" name="fruit">
+            <input type="submit">
+
+        </form>
+
+    </div>
+
+
+    
+</body>
+</html>
