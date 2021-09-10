@@ -53,4 +53,10 @@ public class ToDoDAODummyImpl implements ToDoDAO{
 		return false;
 	}
 
+	@Override
+	public ToDoItem getTodoById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

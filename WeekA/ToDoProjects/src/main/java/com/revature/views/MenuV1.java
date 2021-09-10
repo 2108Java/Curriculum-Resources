@@ -2,6 +2,7 @@ package com.revature.views;
 
 import java.util.Scanner;
 
+import com.revature.exceptions.BusinessException;
 import com.revature.models.ToDoItem;
 import com.revature.service.ServiceToDo;
 
@@ -51,8 +52,19 @@ for(int i = 0; i< array.length; i++) {
 			
 			switch(result) {
 				case "1":
-					ToDoItem[] items = service.getAllToDos();
-					prettyDisplayOfArray(items);
+					
+					try {
+						ToDoItem[] items = service.getAllToDos();
+						prettyDisplayOfArray(items);
+					}catch(BusinessException e) {
+						System.out.println("Our database is down!");
+//						e.printStackTrace();
+					}catch(Exception e) {
+						
+						System.out.println("Something happened, we'll need to review this later!");
+						e.printStackTrace();
+					}
+					
 					break;
 				case "2":
 					System.out.println("Title:");
@@ -71,9 +83,16 @@ for(int i = 0; i< array.length; i++) {
 					break;
 				case "3":
 					System.out.println("Which task would you like to complete? Input a number: ");
-					int id = scanner.nextInt();
+					int id = Integer.parseInt(scanner.nextLine());
 					
-					boolean success = service.completeAToDo(id);
+					boolean success = false;
+					try {
+						success = service.completeAToDo(id);
+					} catch (BusinessException e) {
+						// TODO Auto-generated catch block
+//						e.printStackTrace();
+						System.out.println(e.getMessage());
+					}
 					
 					if(success) {
 						System.out.println("Successfully completed");
