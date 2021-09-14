@@ -1,9 +1,10 @@
 package com.revature.objects;
 
-public  class StaticObject {
+public  static class StaticObject {
 	
 	public static int numberOfObjectsCreated = 0;
 	public String name; 
+	public Object myObject;
 	
 	public StaticObject() {
 		numberOfObjectsCreated++;
@@ -14,7 +15,7 @@ public  class StaticObject {
 		this.name = name;
 	}
 	
-	public class NestedClass{
+	public static class NestedClass{
 		
 		public String anotherName;
 		

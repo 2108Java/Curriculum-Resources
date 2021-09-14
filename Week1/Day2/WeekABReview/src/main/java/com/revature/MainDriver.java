@@ -17,7 +17,7 @@ public class MainDriver {
 		new StaticObject();
 		StaticObject a = new StaticObject();
 		
-		NestedClass ns = new NestedClass();
+		NestedClass ns = a.new NestedClass();
 		
 		ns.anotherName = "a name";
 		System.out.println(ns.anotherName);
