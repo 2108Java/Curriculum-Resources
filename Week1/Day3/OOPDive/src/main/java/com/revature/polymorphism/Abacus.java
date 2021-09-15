@@ -18,7 +18,10 @@ public class Abacus {
 	 * 
 	 * Overriding: 
 	 * 		
-	 * 		Use the same method signature as the parent class. But with different implementation. 
+	 * 		Use the same method signature as the parent class. (same name and parameters)
+	 * 		The return type has to be the same. 
+	 * 		The access modifiers has to be less restrictive: package -> protected -> public
+	 * 			But with different implementation. 
 	 * 
 	 * 		Run time polymorphism (dynamic binding)
 	 * 

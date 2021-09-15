@@ -1,16 +1,17 @@
 package com.revature.polymorphism;
 
-public class Cat {
+public final class Cat {
+	
 	
 	public void makeSound() {
 		System.out.println("Meow!");
 	}
 	
-	public void goHunt() {
+	public final void goHunt() {
 		System.out.println("successful hunt");
 	}
 
-	public void goSleep() {
+	public final void goSleep() {
 		System.out.println("Sleeping for 10 hours");
 	}
 	

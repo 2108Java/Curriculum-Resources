@@ -1,7 +1,10 @@
 package com.revature;
 
+import com.revature.pojo.ChildUser;
 import com.revature.polymorphism.Cat;
 import com.revature.polymorphism.Tiger;
+import com.revature.vehicles.Suzuki;
+import com.revature.vehicles.Truck;
 
 public class MainDriver {
 	
@@ -49,47 +52,72 @@ public class MainDriver {
 
 	public static void main(String[] args) throws Exception {
 		
+		User u = new User();
 		
-		Cat c = new Cat();
+//		u.password = "something else!"; //there's nothing stopping me from modifying this. 
+		u.setPassword("something else!"); 
 		
-//		System.out.println(t);
-//		System.out.println(c);
+//		System.out.println(u.password); //I have total access to this attribute. (also true for methods)
 		
-		Cat c2 = new Tiger();
-		
-//		c2.goSquint();// it see itselft as a Cat. Not as a tiger. 
-		
-//		c2.goSleep();
-//		c2.goHunt();
-//		c2.makeSound();
-		
-		System.out.println(c2);
-		
-		Object o =  new Cat();
+		u.getPassword(); //this will now return the value of the attribute, but now I can't modify it. 
 		
 		
-		System.out.println(o);
-		System.out.println(o.toString());
-
-		Truck t = new Suzuki();
+		ChildUser cu = new ChildUser();
+		
+		cu.aMethod();
+		
+//		System.out.println(u.password);
+//		System.out.println(u.username);
+//		System.out.println(u.amount);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+//		Cat c = new Cat();
 //		
-//		Truck t2 = new Toyota();
+////		System.out.println(t);
+////		System.out.println(c);
 //		
-//		t2.accelerate();
-//		t2.brake();
-//		t2.carryStuff();
+//		Cat c2 = new Tiger();
 //		
-//		Car car = new Toyota();
+////		c2.goSquint();// it see itselft as a Cat. Not as a tiger. 
 //		
-//		car.parkInSmallPlaces();
-//		car.zoomAbout();
+////		c2.goSleep();
+////		c2.goHunt();
+////		c2.makeSound();
 //		
-//		t.accelerate();
-//		t.brake();
-//		t.refuel();
+//		System.out.println(c2);
 //		
-//		RandomClass rc = new RandomClass(); 
-		//Even though we have constructors, we can't instantiate abstract classes
+//		Object o =  new Cat();
+//		
+//		
+//		System.out.println(o);
+//		System.out.println(o.toString());
+//
+//		Truck t = new Suzuki();
+////		
+////		Truck t2 = new Toyota();
+////		
+////		t2.accelerate();
+////		t2.brake();
+////		t2.carryStuff();
+////		
+////		Car car = new Toyota();
+////		
+////		car.parkInSmallPlaces();
+////		car.zoomAbout();
+////		
+////		t.accelerate();
+////		t.brake();
+////		t.refuel();
+////		
+////		RandomClass rc = new RandomClass(); 
+//		//Even though we have constructors, we can't instantiate abstract classes
 
 	}
 
