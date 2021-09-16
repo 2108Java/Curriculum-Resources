@@ -10,6 +10,12 @@ public class MainDriver {
 	 * A String is an object that contains an array of characters. 
 	 * It allows you to create and manipulate strings of characters. 
 	 * 
+	 * String literals are stored in the String pool.
+	 * 
+	 * When a new String object is created, it checks to see if the String pool already 
+	 * 	has the literal value. If yes, then it will point to it. If not, then it creates
+	 * 	a new instance of the String literal in the pool. 
+	 * 
 	 * If String is a class, what do String's have?
 	 * 		Attributes
 	 * 		Methods 
@@ -19,6 +25,15 @@ public class MainDriver {
 	 * 		The class is immutable and final. 
 	 * 		final: the class cannot be extended 
 	 * 		immutable: The string cannot be changed. 
+	 * 
+	 * String methods: 
+	 * 
+	 * 		.charAt();
+	 * 		.length()
+	 * 		.substring(n,m) returns a substring of the String from n to m. 
+	 * 		.split(" ") split the string based on a character, in this case the space character
+	 * 		.concat();
+	 * 		.isEmpty();
 	 */
 	
 	public static void main(String[] args) {
