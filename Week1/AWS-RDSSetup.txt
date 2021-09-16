@@ -1,0 +1,35 @@
+1) Navigate to AWS
+2) Login to your account
+3) NAvigate to AWS Manager Console: 
+	Search up "RDS"
+	Select RDS 
+
+4)You are going to see "Resources"
+	Inside of resources you'll see 
+		"DB Instances"
+		Click on DB Instances
+
+5) Orange button on the top write of the page
+	"Create Database"
+	Click on it. 
+
+6) You'll be navigated to the database creation
+ menu.
+	Select "Standard Create"
+	Select "PostgreSQL"
+	Select a version of postgres that is FREE
+	Select the FREE tier
+	"Templates" SELECT FREE TIER 
+	"Settings" set password
+	"DB instance class" do nothing 
+	"Storage" do nothing 
+	"availablity & duration " do nothing
+	"connectivity" change public access to "yes"
+			create a new VPC security group 
+			(don't need to make one if you already have one)
+
+(7) Setting up our VPC group configruation
+	Select the VPC security group associated with your DB
+	Edit Inbound rules 
+		Set your ports (5432 in the case of postgres) and your IP address)
+	
