@@ -1,0 +1,188 @@
+<!DOCTYPE html> <!--this is necessary-->
+<html lang="en">
+<head> <!--this is necessary-->
+    <meta charset="UTF-8">
+    <title>I love cats</title>
+    <link rel="stylesheet" href="externalcss.css"> <!--this connected our external style sheet to our page-->
+    <style>
+        h4{/* these are element selctors */
+            color: blue;
+        }
+
+        
+        
+
+        #showTabbing{/* use the # and the name of an id to select an element via id. Ids should be unique */
+            padding-left: 20px;
+        }
+
+        
+
+        .myClass{/* use the . and the name of a class to select element/s via their class */
+            color: aquamarine;
+        }
+
+        
+
+        
+
+        /* * { this is the universal selector, affects every element that it can
+            color: white;
+        } */
+
+        [style]{ /* this is the attribute selector */
+            text-align: center;
+        }
+
+        /* [style],[class]{ you can group your attribute selectors
+            text-align: center;     
+        } */
+
+        /* to select an element via an attribute, place the attribute 
+        (not the value within the attribute) in square brackets */
+
+        h2, h6 {/* this is grouping: you can apply css to multiple elements at the same time */
+            text-align: center;
+        }
+
+        
+
+div ~ p{ /* general sibling selector */
+    color: yellow;
+}
+
+div + p{ /* adjacent sibling selector */
+    color: orange;
+}
+
+#psudoSelector:hover {/*apply styling to an element which are related to external factors (psuedo element*/
+    color: darkgreen;
+}
+
+#psudoSelector2::first-letter{ /*style the specified parts of an element that are not available under DOM tree (psuedo class)*/
+    color: steelblue;
+}
+
+    </style>
+    <!--inline css will overwrite internall css. Use Internal to make broad internal CSS changes, inline for specific changes-->
+</head> <!--this is necessary-->
+<body> <!--this is necessary-->
+
+    <!-- when creating our webpage, we are using elements that have attributes-->
+    <!--elements are the actual content of the html page, attributes are the style/organization information-->
+
+    <!--headers are useful for designating what content the user is looking at-->
+    <h1>this is an h1 header</h1>
+    <h2>this is an h2 header</h2>
+    <h6>this is the lowest of the headers</h6>
+
+    <!--you can use the p tag to designate text-->
+    <!--text to speech will read some of these differently-->
+    <p class="myClass">this is inside of my first p tag</p>
+    <p>this is inside my second p tag</p>
+    <p><strong>this is my bold text</strong></p>
+    <p><i>this is my italics text</i></p>
+    <p class="myClass"><u>this is my underlined text</u></p>
+    <p><s>this is my striked through text</s></p>
+    <!--these previous elements are what is called block elements-->
+
+    <!--semantic elements are those that are useful to you as a developer, 
+        but are not necessarily understood by the end-user-->
+    <div id="showTabbing">
+        <p>this is inside my div tag</p>
+        <P>this is also inside my div tag</P>
+    </div>
+    <!--use these containers to logically group your elements, and to apply styling-->
+    <p style="display: inline;">this is set to be inline</p>
+    <p style="display: inline;"> this is also set to be inline</p>
+    <br> <!-- use this break tag when you want to create a "line" between elements-->
+
+    <input type="text">
+    <input type="number" max="100">
+    <br/>
+    <input type="radio" id="contact"> <!--these are used with forms, which will be more relevant when 
+        you learn Javascript-->
+    <br/>
+    <input type="file"> <!--use this input when you want users to be able to upload files-->
+    <br>
+    <!--buttons are a useful way to allow users to submit information or to make something happen on your page-->
+    <button>this is my button: this one does not do anything</button>
+    <button onclick="alert('congratulations! You have won an ipad!')">this button does something!</button>
+    <!--the onclick attribute is the easiest way to make something happen when the button is clicked-->
+
+    <!--lists are a useful way to display information-->
+    <ol>
+        <li>this is the first item in my ordered list</li>
+        <li>this is my second item in my ordered list</li>
+    </ol>
+    <ul>
+        <li>this is the first item in my unordered list</li>
+        <li>this is the second item in my unordered list</li>
+    </ul>
+    <dl>
+        <dt>this is my key word</dt>
+            <dd>this is the description of the dt</dd>
+        <dt>this is my other key word/phrase</dt>
+            <dd>this is the description of the other keyword/phrase</dd>
+    </dl>
+    <ul> <!--this is how you would create nested lists-->
+        <li>item one</li>
+            <ul>
+                <li>nested item one</li>
+                <li>nested item two</li>
+            </ul>
+        <li>item two</li>
+            <ul>
+                <li>nested item three</li>
+                <li>nested item four</li>
+            </ul>
+    </ul>
+
+<!--tables are incredibly useful in html pages-->
+<table style="text-align: center;">
+    <thead> <!--these tags are semantic tags to organize your table-->
+        <tr><!--this marks a row of data-->
+            <th>this is header one</th><!--th indicates that this data is the header for the table-->
+            <th>this is header two</th>
+        </tr>
+    </thead>
+    <tbody><!--these tags are semantic tags to organize your table-->
+        <tr>
+            <td>this is data one</td> <!--td indicates the information is data for the table-->
+            <td>this is data two</td>
+        </tr>
+        <tr>
+            <td>this is second row data</td>
+            <td>this is also second row data</td>
+        </tr>
+    </tbody>
+</table>
+
+<!--this is the basic way to add an image to your webpage. PNG is the optimal format to use-->
+<img src="example.gif" alt="this shows if the image is unavailable">
+
+<!--CSS is the primary way you will stylize your webpages-->
+
+<!--inline css is where you add style information within the style arrtibute of the elemen directly-->
+<p style="text-align: right;">this is stylized via inline css</p>
+<p style="color: red;">this is also stylized via inline css</p>
+
+<!--there is also internal CSS. This is provided within the head of the HTML document-->
+<h4>this is stylized via internal CSS</h4>
+
+<div> <!--these show off general and adjacent sibling selectors-->
+    <p>this text is inside the div</p>
+</div>
+<p>this text is next to the div</p>
+<p>this text is next to the text that is next to the div</p>
+
+<!--this is an example of a psuedo element selector-->
+<p id="psudoSelector">this will change color whenever you hover the mouse above it</p>
+
+<p id="psudoSelector2">The first letter of this text will be unique</p>
+
+<!--be aware of the box model! It will help you organize and style your pages-->
+
+
+</body> <!--this is necessary-->
+</html> <!--this is necessary-->
