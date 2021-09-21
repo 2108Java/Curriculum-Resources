@@ -1,0 +1,37 @@
+Normalization is the process of reducing data redundancy in our 
+database. 
+
+What is data redundancy?
+	Keeping track of unnecessary data because our tables 
+	are not structured appropriately. 
+
+Industry standard for normalisation is 3rd Normal Form 
+There are 6 NF, but we will only look up to 3rd Normal Form. 
+
+"The Key"
+1 Normal Form. 
+	Primary key : unique identifier for row/records 
+	Atomic Columns (smallest indivisible amount of data)
+
+"The Whole Key" 
+2nd Normal Form: 
+	We need to achieve at least 1st NF
+	We need to have no partial dependencies on the primary key. 
+
+"Nothing But The Key" 
+3rd Normal Form: 
+	We need to achieve at least 2nd Normal Form 
+	We can't have transitive dependencies. 
+
+	If I have numbers, a , b and c. 
+	if a is greater than b : a > b 
+	and if b is greater than c: b > c 
+	then that implies a is greater than c ==> a > c
+	(without having directly compared them)  
+
+"Keys":
+	Primary key : unique identifier for row/record
+	Foreign Key : primary key of another table, that our table references. 
+	Candidate Key : is a column that can "act" as a primary key (BUT IS NOT)
+	Composite key : is multiple columns that can act as a primary key
+			(when combined together)
