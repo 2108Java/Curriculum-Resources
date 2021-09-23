@@ -1,0 +1,21 @@
+Interfaces; 
+	Marker vs Functional vs (Normal) Interfaces 
+
+	Java 8 features: 
+		Introduction of "default" keyword 
+		Introduction of lambda expressions. (what it is and why we use it) 
+			(to allow us to do more functional style programming) 
+
+
+Collection: 
+	Collection vs Collections. 
+
+	Comparing/sorting objects using Collections and Comparators and Comparables. 
+
+	Comparator vs Comparable. 
+
+
+Javalin: 
+	
+	Connecting endpoints (URL) to our Java code. 
+	Executing (very basic) CRUD operations. 
