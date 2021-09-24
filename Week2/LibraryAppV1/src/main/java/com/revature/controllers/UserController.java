@@ -1,5 +1,9 @@
 package com.revature.controllers;
 
+import java.util.List;
+
+import com.revature.models.Book;
+
 import io.javalin.http.Context;
 
 public interface UserController {
@@ -11,11 +15,11 @@ public interface UserController {
 	// my JavaScript, HTML and CSS.
 	
 	
-	public void authenticate(Context ctx);
+	public boolean authenticate(String username, String password);
 	
-	public void viewUserBooks(Context ctx);
+	public List<Book> viewUserBooks(Context ctx);
 	
-	public void viewAvailableBooks(Context ctx);
+	public List<Book> viewAvailableBooks(Context ctx);
 	
 	public void withdrawBook(Context ctx);
 	

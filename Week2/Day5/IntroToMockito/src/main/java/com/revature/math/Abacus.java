@@ -11,7 +11,7 @@ public class Abacus {
 	}
 	
 	public double add(double x, double y) {
-		return x+y;
+		return 0;
 	}
 	
 	public double divide(double x, double y) throws Exception{
@@ -26,7 +26,7 @@ public class Abacus {
 		
 		
 		
-		return x/y;
+		return 0;
 	}
 
 }
