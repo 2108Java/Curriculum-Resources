@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <title>Pokemon Page!</title>
+
+</head>
+<body>
+
+    <div class = "container">
+        <div class = "jumbotron text-center">
+            <h3> Pokemon Example!</h3>
+            <span class = "label label-success">Using the RESTful PokeAPI</span>
+        </div>
+    </div>
+    
+
+    <!-- For this example, we're not using form! from is a html built in tool
+            We want to use JavaScript. HTML is simply a document. 
+    -->
+
+    <!--What would I like to show about the pokemon?-->
+    <!-- The name of the pokemon-->
+    <!-- A default front image of the pokemon-->
+    <!-- The type of the pokemon-->
+    <div class = "info">
+        <div class = "text-center">
+            <img id = "pokemonImg">
+            <h3 id = "pokemonName"></h3>
+            <h3 id = "pokemonType"></h3>
+        </div>
+        
+    </div>
+    
+
+
+
+    <!--This is the input section of our page, for the user to send us information-->
+
+    <div class = "container">
+        <input type="text" id="pokemonId" placeholder="Enter Pokemon Id" class = "form-control">
+         <input type="submit" class="form-control btn btn-success" id="pokemonSubmit">
+    </div>
+    
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script src="pokeDemo.js"></script>
+</body>
+</html>
