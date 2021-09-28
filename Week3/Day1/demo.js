@@ -45,6 +45,11 @@
  *      ES6 a standard introduced in 2015, EcmaScript 2015. Which introduced new features 
  *          and datatypes for developers.
  *      ECMA is an international body that sets that standard for all scripting languages. 
+ * 
+ *      fat arrow notation 
+ *      let and const 
+ *      template literals 
+ *      class declarations 
  */
 
 
@@ -408,7 +413,12 @@ console.log(isNaN(1/0)); //isNaN() can be used to check if we get a valid result
 
 console.log(0*(1/0)); //this is an example of not checking before we do an opertaion. 0*infinity is NaN. 
 
-//NaN is NOT a datatype! 
+//NaN is NOT a datatype or a keyword!
+// isNaN: a  function tath returns true if variable is not a type of number
+// 1) 0/0
+// 2) Infinity/Infinity
+// 3) 0*Infinity
+// 4) Converting a string into a number e.g. "apples" -> NaN 
 
 console.log(typeof(NaN)); //NaN is defined to be of a number datatype. 
 
