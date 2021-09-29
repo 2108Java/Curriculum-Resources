@@ -22,8 +22,15 @@ public class PlanetController {
 
 	public Planet getPlanet(Context ctx) {
 		
+		//I want to return the planet that the user wants!
 		
-		return this.planetList.get(0);
+		String stringId = ctx.pathParam("id");
+		
+		int id = Integer.parseInt(stringId);
+		
+		ctx.res.setStatus(418);
+		
+		return this.planetList.get(id);
 	}
 
 	public List<Planet> getAllPlanets(Context ctx) {
@@ -33,4 +40,8 @@ public class PlanetController {
 		return this.planetList;
 	}
 
+	public void deletePlanet(Context ctx) {
+		
+	}
+	
 }

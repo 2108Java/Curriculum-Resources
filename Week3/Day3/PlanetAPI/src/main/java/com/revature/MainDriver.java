@@ -8,11 +8,20 @@ public class MainDriver {
 	
 	public static void main(String[] args) {
 		
-		Javalin app = Javalin.create(config -> config.addStaticFiles("/")).start(8000);
+		Javalin app = Javalin.create(config -> config.addStaticFiles(
+				staticFiles ->
+				{
+					staticFiles.directory = "/";
+				}
+				)).start(8000);
 		
-		RequestHandler rq = new RequestHandler();
+//		app.get("$\\{name}", ctx -> { // the {} syntax does not allow slashes ('/') as part of the parameter
+//		    ctx.result("Hello: " + ctx.pathParam("name"));
+//		});
 		
-		rq.setUpEndpoints(app);
+//		RequestHandler rq = new RequestHandler();
+		
+		RequestHandler.setUpEndpoints(app);
 		
 	}
 

@@ -1,0 +1,57 @@
+HTTP: 
+	Hyper Text Transfer protocol 
+	HTTP follows a request, response style of communication. 
+
+	"From our front end"
+	We send HTTP Requests: 
+	A HTTP needs to specify a few properties: 
+
+		URI : Uniform Resource Identifier 
+			URI is where the resource is. Every time we want to get 
+			functionality from our server, we need to specify where in 
+			the server. 
+
+		Verb : 
+			Specifies what we want to do with the resource. 
+			(The resource can be an html, a text file (in the 
+			format of json), really anything that can be hosted)
+			The most popular ones are: 
+			GET: (Read) I am trying to view a resource. 
+				(GET request don't have bodies attached to them)
+				(GET also has a limit on how much info it can send)
+				(The browser only supports "GET" on the search bar)
+
+			POST: (Create) I am trying to create a new resource. 
+				(POST request has a body attached to it)
+				(Also is a better way to send username and passwords
+				because it isn't visible on the URL) 
+
+			PUT : Used for updating resources
+			DELETE : Used for deleting resources. 
+
+			Idempotent vs Safe methods! 
+
+		Header:
+			Header is meta data that we provide to the server to provide
+			context. 
+			Cookies/Sessions to prove who we are. 
+			Languages accepted, resource type, etc. 
+		Body: 
+			Store the "payload"
+			e.g. text (can be in the format of xml, json, etc. )
+
+
+	Http Response: 
+
+		Status Code: 
+			100s : informational 
+			200s : success
+			300s : redirect 
+			400s : client side failure
+			500s : server side failures
+
+		Header: 
+			Similar to Http request purpose
+		Body: 
+			Similar to Http request puprose
+		

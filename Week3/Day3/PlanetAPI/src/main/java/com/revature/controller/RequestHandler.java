@@ -15,9 +15,13 @@ public class RequestHandler {
 		
 		planetController.initalizeList(); //
 		
-		app.get("/planet", ctx -> ctx.json(planetController.getPlanet(ctx))); //localhost:8000/planet is going to return a single planet
+		app.get("/planet/{id}", ctx -> ctx.json(planetController.getPlanet(ctx))); //localhost:8000/planet is going to return a single planet
 		
 		app.get("/planets", ctx -> ctx.json(planetController.getAllPlanets(ctx))); //localhost:8000/planets is going to return planets 
+		
+		app.get("/hello/{name}", ctx -> { // the {} syntax does not allow slashes ('/') as part of the parameter
+		    ctx.result("Hello: " + ctx.pathParam("name"));
+		});
 		
 		
 		app.get("/login", 

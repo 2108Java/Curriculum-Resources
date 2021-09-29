@@ -32,6 +32,8 @@ public class AuthenticateController {
 					page = "failedLogin.html";
 				}
 		
+//		if(service.authenticate(ctx.queryParam(username))) What we would do in a full stack. 
+		
 		return page;
 		
 	}

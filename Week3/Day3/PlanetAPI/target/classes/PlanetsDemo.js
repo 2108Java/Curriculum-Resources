@@ -3,6 +3,28 @@
  */
  
 function getPlanet(){ //getting a single planet
+
+	let planetId = document.getElementById("planetId").value;
+	
+	let baseUrl = "http://localhost:8000/planet/";
+	
+	let fullPlanetUrl = baseUrl +planetId;
+	
+	let xhttp = new XMLHttpRequest();
+	
+	xhttp.onreadystatechange = function(){
+		
+		if(this.status == 200 && this.readyState == 4){
+			let planet = JSON.parse(this.responseText);
+			console.log(planet);
+			
+			addRow(planet);
+		}
+	}
+	
+	xhttp.open("GET",fullPlanetUrl);
+	
+	xhttp.send();
 	
 }
 
@@ -36,7 +58,7 @@ function getAllPlanets(){ //getting all the planets
 }
 
 let button = document.getElementById("planetSubmit");
-button.addEventListener('click',getAllPlanets);
+button.addEventListener('click',getPlanet);
 
 window.onload = function(){
 
