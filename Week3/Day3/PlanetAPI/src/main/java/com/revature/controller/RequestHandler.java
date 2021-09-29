@@ -1,5 +1,7 @@
 package com.revature.controller;
 
+import javax.servlet.ServletRequest;
+
 import io.javalin.Javalin;
 
 public class RequestHandler {
@@ -9,6 +11,7 @@ public class RequestHandler {
 	public static void setUpEndpoints(Javalin app) {
 		
 		PlanetController planetController = new PlanetController();
+		AuthenticateController authenticateController = new AuthenticateController();
 		
 		planetController.initalizeList(); //
 		
@@ -16,7 +19,14 @@ public class RequestHandler {
 		
 		app.get("/planets", ctx -> ctx.json(planetController.getAllPlanets(ctx))); //localhost:8000/planets is going to return planets 
 		
-		app.get("/login", ctx -> ctx.redirect(null));
+		
+		app.get("/login", 
+				ctx -> ctx.redirect(authenticateController.authenticate(ctx)));
+		
+		app.get("/", ctx ->
+		ctx.redirect("Login.html"));
+		
+		
 	
 	}
 
