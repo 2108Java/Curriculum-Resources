@@ -27,9 +27,11 @@ public class AuthenticateController {
 		String page = "";
 		if(ctx.queryParam("username").equals("user") 
 				&& ctx.queryParam("password").equals("p4ss")){
-					page = "PlanetsLandingPage.html";
+//					page = "PlanetsLandingPage.html";
+					page = "/PlanetPage";
 				}else {
-					page = "failedLogin.html";
+//					page = "failedLogin.html";
+					page = "/failedLogin";
 				}
 		
 //		if(service.authenticate(ctx.queryParam(username))) What we would do in a full stack. 

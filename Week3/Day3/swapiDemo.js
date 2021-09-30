@@ -103,8 +103,3 @@ function addRow(starWarsPerson){
 
 }
 
-function setTable(){
-    for(){
-        addRow(object);
-    }
-}
