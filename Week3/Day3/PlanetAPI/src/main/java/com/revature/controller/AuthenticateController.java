@@ -22,14 +22,17 @@ public class AuthenticateController {
 		 * JSON: infomration can be sent via the request body, in the format of JSON
 		 */
 		
-		System.out.println(ctx.queryParam("username"));
-		System.out.println(ctx.queryParam("password"));
+		System.out.println(ctx.formParam("username"));
+		System.out.println(ctx.formParam("password"));
 		String page = "";
-		if(ctx.queryParam("username").equals("user") 
-				&& ctx.queryParam("password").equals("p4ss")){
+		if(ctx.formParam("username").equals("user") 
+				&& ctx.formParam("password").equals("p4ss")){
+			
+					ctx.sessionAttribute("access", true); //we're now giving them access!
 //					page = "PlanetsLandingPage.html";
 					page = "/PlanetPage";
 				}else {
+					ctx.sessionAttribute("access",false);
 //					page = "failedLogin.html";
 					page = "/failedLogin";
 				}
