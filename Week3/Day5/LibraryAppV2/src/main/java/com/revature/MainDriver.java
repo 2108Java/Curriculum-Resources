@@ -1,5 +1,6 @@
 package com.revature;
 
+import com.revature.controller.RequestMappings;
 import com.revature.repo.BookDao;
 import com.revature.repo.BookDaoImpl;
 import com.revature.repo.BookLoanDao;
@@ -12,29 +13,37 @@ import com.revature.service.UserService;
 import com.revature.service.UserServiceImpl;
 import com.revature.util.PropertiesParser;
 
+import io.javalin.Javalin;
+
+
+
 public class MainDriver {
 	
 	public static void main(String[] args) {
 		
 		
-	   UserDao uDao = new UserDaoImpl();
-	   BookDao bDao = new BookDaoImpl();
-	   BookLoanDao loanDao = new BookLoanDaoImpl();
+
+	   
+	   PropertiesParser.getProperties(); 
 	   
 	   
-	   UserService userService = new UserServiceImpl(uDao, bDao, loanDao);
-	   AuthenticateService authService = new AuthenticateServiceImpl(uDao);
+	   Javalin app = Javalin.create(config -> config.addStaticFiles(
+				staticFiles ->
+				{
+					staticFiles.directory = "/public";
+				}
+				)).start(8000);
 	   
-	   PropertiesParser.getProperties();
+	   //We've got connection to our html files 
+	   //We need to connect our Java functionality 
 	   
 	   
-	   System.out.println(authService.verify("bob"));
-	   System.out.println(authService.authenticate("bob", "p4ss"));
-//	   
-	   System.out.println(userService.getUserByUsername("bob"));
-//	   
-	   System.out.println(bDao.selectAllBooks());
-//	   
+	   //Servlets are what handle Http REquests and Responses directly. 
+	   //Javalin abstracts away the process of creating and connecting our servlets. 
+	   //Setting up a connection endpoints 
+	   
+	   RequestMappings.setupEndPoints(app);
+	   
 	   
 	   
 		
