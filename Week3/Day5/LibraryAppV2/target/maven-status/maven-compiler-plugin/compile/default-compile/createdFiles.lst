@@ -1,0 +1,15 @@
+com\revature\util\PropertiesParser.class
+com\revature\service\AuthenticateServiceImpl.class
+com\revature\service\AuthenticateService.class
+com\revature\repo\BookLoanDaoImpl.class
+com\revature\util\ConnectionFactory.class
+com\revature\repo\UserDao.class
+com\revature\repo\BookDao.class
+com\revature\repo\BookLoanDao.class
+com\revature\service\UserService.class
+com\revature\models\Book.class
+com\revature\MainDriver.class
+com\revature\models\User.class
+com\revature\repo\UserDaoImpl.class
+com\revature\repo\BookDaoImpl.class
+com\revature\service\UserServiceImpl.class
