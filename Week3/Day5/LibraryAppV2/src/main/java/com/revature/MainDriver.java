@@ -35,23 +35,6 @@ public class MainDriver {
 //	   
 	   System.out.println(bDao.selectAllBooks());
 //	   
-//	   System.out.println(userService.checkoutBook(userService.getUserByUsername("bob"), "Fake"));
-//	   
-//	   System.out.println(userService.returnBook(userService.getUserByUsername("bob"), "Fake"));
-	   
-	   
-	   
-//	   System.out.println(uDao.selectUserById(1));
-//	   
-//	   System.out.println(uDao.selectUserByUsername("bob"));
-//	   
-//	   System.out.println(bDao.selectAllBooks());
-//	   
-//	   System.out.println(loanDao.selectAllBooksByUserId(1));
-//	   
-////	   System.out.println(bDao.insertBook(new Book(0, "Fake", "fake author", "fake genre")));
-//	   
-//	 System.out.println(loanDao.checkIfBookIsLoaned(2));
 	   
 	   
 		

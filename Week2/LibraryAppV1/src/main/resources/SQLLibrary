@@ -1,0 +1,22 @@
+create table users_table (
+	
+	id serial primary key, 
+	username varchar(30),
+	password varchar(30)
+
+);
+
+create table books_table (
+
+	book_id serial primary key, 
+	book_name varchar(30),
+	author varchar(30),
+	genre varchar(30)
+);
+
+create table user_book_loan (
+
+	user_id int references users_table(id),
+	book_id int references books_table(book_id),
+	due_date date not null
+);
