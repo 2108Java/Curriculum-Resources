@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name>HardWayHello</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>PlanetServlet</display-name>
+    <servlet-name>PlanetServlet</servlet-name>
+    <servlet-class>com.revature.PlanetServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PlanetServlet</servlet-name>
+    <url-pattern>/PlanetServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AuthenticationServlet</display-name>
+    <servlet-name>AuthenticationServlet</servlet-name>
+    <servlet-class>com.revature.AuthenticationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AuthenticationServlet</servlet-name>
+    <url-pattern>/AuthenticationServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
