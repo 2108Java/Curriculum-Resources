@@ -103,12 +103,26 @@ public class PlanetController {
 
 	public void postPlanet(Context ctx) {
 		
+		//declare a placeholder null object 
 		Planet p = null;
 		
+		//The purpose of the Object Mapper is to map my JSON text into a Java object 
 		ObjectMapper om = new ObjectMapper();
 		
+		//Here I'm grabbing the JSON object text from the Request body 
 		String planetJSONText = ctx.body();
 		
+		
+		
+		//The form way 
+//		int id = Integer.parseInt(ctx.formParam("id"));
+//		String name = ctx.formParam("name");
+//		String description = ctx.formParam("description");
+//		
+//		Planet p = new Planet();
+//		p.setId(id);
+		
+		System.out.println(planetJSONText);
 		try {
 			p = om.readValue(planetJSONText, Planet.class);
 			

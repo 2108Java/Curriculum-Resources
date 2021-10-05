@@ -25,7 +25,7 @@ public class RequestHandler {
 		PlanetController pc = new PlanetController();
 		AuthenticateController ac = new AuthenticateController();
 		
-		final String PLANET = "/planet";
+		final String PLANET = "api/planet";
 		final String PLANET_ID = "/planet/{id}";
 		final String AUTHENTICATE = "/authenticate";
 		final String LOGOUT = "/logout";
@@ -36,16 +36,17 @@ public class RequestHandler {
 		//An API exposes functionality via endpoints, we don't prepare views here. 
 		
 		//Create
+		//should be limited to authorized users
 		app.post(PLANET, ctx -> {
+			
 			if(checkAccess(ctx)) {
 				pc.postPlanet(ctx);
 			}else {
 				ctx.res.setStatus(401);
 			}
 			
+			
 		});
-		
-		
 		
 		//Get 
 		app.get(PLANET_ID, ctx -> {
@@ -58,15 +59,37 @@ public class RequestHandler {
 		
 		
 		//Update
+		//should be limited to authorized users
 		app.put(PLANET, ctx -> {
-			pc.putPlanet(ctx);
+			
+			
+			if(checkAccess(ctx)) {
+				pc.putPlanet(ctx);	
+			}else {
+				ctx.res.setStatus(401);
+			}
 		});
 		
 		//Delete 
+		//should be limited to authorized users 
 		app.delete(PLANET_ID, ctx -> {
-			pc.deletePlanet(ctx);
+			
+			
+			if(checkAccess(ctx)) {
+				pc.deletePlanet(ctx);	
+				}else {
+					ctx.res.setStatus(401);
+				}
 			
 		});
+		
+		
+		//AUTHORIZE 
+		app.post(AUTHENTICATE, ctx -> {
+			ac.authenticate(ctx);
+		});
+		
+		app.get(LOGOUT, ctx ->  {ac.logout(ctx);});
 		
 		
 	}

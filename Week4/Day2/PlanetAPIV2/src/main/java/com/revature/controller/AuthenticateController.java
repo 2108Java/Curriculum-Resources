@@ -11,7 +11,7 @@ public class AuthenticateController {
 	
 	//IF it succeeds what should happen?
 	//  We will go the planetsLanding page. 
-	public String authenticate(Context ctx) {
+	public void authenticate(Context ctx) {
 		
 		//My information is all stored within the request! 
 		//ctx will have the information I need. 
@@ -29,20 +29,14 @@ public class AuthenticateController {
 				&& ctx.formParam("password").equals("p4ss")){
 			
 					ctx.sessionAttribute("access", true); //we're now giving them access!
-//					page = "PlanetsLandingPage.html";
-					page = "/PlanetPage";
 					
-					ctx.redirect("http://localhost:8000/home");
 				}else {
 					ctx.sessionAttribute("access",false);
-//					page = "failedLogin.html";
-					page = "/failedLogin";
-					ctx.redirect("http://localhost:8000/failedLogin");
+
 				}
 		
 //		if(service.authenticate(ctx.queryParam(username))) What we would do in a full stack. 
-		
-		return page;
+	
 		
 	}
 	
