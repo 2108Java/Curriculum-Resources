@@ -1,0 +1,50 @@
+Verbs 
+	Safe vs Idempotent methods 
+	Safe: no change to state on the server
+	Idempotent: If I send of a request once or a million times, 
+			the change that occurs will stay the same. 
+
+		Safe 		Idempotent
+	GET       Y		     Y
+ 	POST      N		     N
+	PUT	  N		     Y      (full update)
+	(PATCH)   N 		     N      (partial update)
+	DELETE    N		     Y
+
+
+REST API 
+Typically not designed for humans to consume! 
+REST APIs is focused around data and not views! 
+
+A RESTful API will follow these 6 principles:
+(A REST based API is an API that follows some of the principles) 
+	Server-Client :
+		A separation of client and server and communication 
+		via HTTP. 
+	Statelesness :
+		Between request we don't keep track of the the request info. 
+		(we don't check if someone is authorized via sessions) 
+	Cacheable : 
+		A resource that is cacheable should declare itself cacheable. 
+	
+Uniform Interface:
+		Resource requests are idnetifiable and seperate from the 
+		representation sent to the client. 
+
+		resources can be manipulated via their representation 
+		(our endpoints descripbe the resource, e.g. /api/planet
+		{
+			name: 
+			moons: 
+				{ "The Moon" : //localhsot:8000/api/planet/moon/1}
+		(CRUD operations via the verbs we use)
+
+		self descriptive messages, the response should have 
+		everything we need and hyperlinks to new resources. 
+
+
+	Layered System : 
+		Each layer is only aware of the layer above. 
+	(Optional) Code on demand 
+		Ability to send executable Javascript code to the client. 
+		Extending the capability of the client. 

@@ -1,0 +1,20 @@
+Maven is a built automation tool that we levarage to manage our applications. 
+
+(There are many of them, Gradle, ant, etc. )
+
+Maven allows us to automate the process of building our projects into an 
+	distributal format that can be deployed into a server. 
+
+Maven lifecycle: 
+
+	check if the code is valid 
+	
+	compile 
+
+	testing 
+
+mvn install : validate -> compile -> test -> package -> verify -> install 
+
+mvn clean install: this is the same, but I clear out any previous jar files I've made 
+
+"clean" is not a mvn goal, it's a modifer that cleans up our packages. 
