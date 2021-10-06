@@ -1,0 +1,112 @@
+SDLC?
+	Design 
+
+	Coding/Developing 
+
+	Test 
+
+	Deploy 
+
+
+Waterfall methodology?
+	Progresses one phases at a time. 
+	The whole team and the whole product is completed at once 
+	"falls of the waterfall at the same time"
+
+	Intuitive and easy to follow. 
+	If there is an issue with the product or failures in any of the phases, 
+		the entire team and the product get setback. 
+
+	In waterfall, the development team would not be responsible for deploying or testing 
+	the application. 
+
+	What would happen if the app fail to deploy?
+	
+
+Agile Methodology?
+	Make it more responsive to the ever changing aspect of the software development.
+	We focus around sprints to implement features. One at a time. 
+	An entire feature goes through the SDLC, not the whole project. 
+	Daily standups, sprint planning and sprint retrospectives.
+
+
+	Part of the SDLC is to deploy the app/feature 
+
+
+
+DevOps: 
+	Development Operations: 
+		Is to maintain the development and maintenance of our product. 
+
+		With Agile, continous feedback is important. So we want to be able 
+		to check if the application can build, pass the tests and deploy to an environment. 
+
+		With Agile: 
+			Continous integration CI
+				As soon as I push to a branch, I want the project to be rebuilt on 
+				a remote environment by maven. 
+
+				(I'm not running the app, just building it to make sure it is buildable
+				and passes all the checks)
+			Continous delivery CD 
+				Delivery means to run the applicaiton in an internal environment for 
+				possible developer verification before deploying it. 
+
+			Continous deployment CD 
+				Depoloyments to automate the deployments of our applicaiton to a 
+				production environment. 
+
+Before Agile how did we do this?
+	We would manually rebuild our application overnight and check for feedback. 
+
+
+Jenkins: 
+	Is a automation server that allows us to complete a full CICD pipeline. 
+	Open source CICD software that allows us to create a pipeline. 
+		It has a web GUI, that allows us to more easily configure our pipeline. 
+
+	Due to its open source nature, we get extreme flexibility. 
+	If Jenkins can't build your project, you can add in plugins that allows you do so. 
+
+	Downside to flexibilityis extreme configurations. We don't get anything really prepared for us
+		we have to build everything from scratch! 
+
+
+Github authentication : 
+	username and password (depcreated) - DONT USE THIS
+	ssh key (give us root access to our account) - DONT USE THIS
+	Personal access token!
+
+	for webhooks:
+		http://<ec2-endpoint>:8080/github-webhook/
+
+
+Once Jenkins is setup:
+
+	Setup plugins: 
+		Maven integration 
+		Github integration 
+
+	Manage global settings: 
+		No need for JDK 
+		(Make sure git is installed locally) Git should also work 
+		Maven: install automatically
+
+	Set up our pipeline 
+		Jenkins job: Maven project 
+		Discard old builds 
+		Configure our Git repos (don't add .git) 
+		Configure Github credentials using Github personall access tokens 
+		Turn on GitHub hook trigger for GITScm polling 
+		Set up our Build 
+
+		Execute our project:
+			#!/bin/bash
+			echo kill existing
+			pkill -f 'java -jar'
+			echo starting deploy
+			BUILD_ID=dontKillMe nohup java -jar <file-path-to-jar>.jar &
+			echo deploy finished
+
+
+	

@@ -1,0 +1,52 @@
+Vertical scaling 
+	Increasing the capacity/processin gpower of a single computer 
+
+Horizontal scaling:
+	We increase the instances of applicaitons on different computers.
+
+
+How do we initally horizontally scale before VM (virtual machines)?
+
+	With great difficulty. 
+	Get another computer/server.
+	With shared resources, it's difficult to run multiple instances of a application. 
+	Other than the fact we have the same ports, it's difficult to limit how much 
+	resources a single instance will take over. 
+
+Virtual Machine: 
+
+	Virtaulizes at the hardware level! Emulates a physical machines and we can treat
+	it as a physical machine.
+		
+	VMs are isolated, so if a VM failes, other VM should not be affected. 
+	VMs are isolated systems to play with (test, deploy or experiment in them)
+
+	Each VM comes with it's own OS, libraries and applications. 
+
+	VMs are managed using Hypervisors. 
+
+
+Containers: 
+	
+	Even more light weight version of virtual machines! 
+		Because the containers aren't as isolated as the VM. 
+		VMs are virtualized at the hardware level
+		Containers are virtualized at the OS level 
+		Contianers piggy back of the host's OS and libraries. 
+
+	(If I have sudden failure or increase in traffic, it takes seconds to doploy a container)
+
+	Docker containers, and everything to do with docker is managed with a container engine. 
+
+	We need a background thread, the docker daemon thread running to manage our containers.
+
+To set up a docker container we need a Docker image, 
+	to set up a docker image, we need a Dockerfile for our initail configuration 
+
+	Configuration file -> Template for a running contianer -> Running container 
+	Dockerfile -> Docker image -> Docker container
+
+
+
+Docker vs Virtual machines
+	 
