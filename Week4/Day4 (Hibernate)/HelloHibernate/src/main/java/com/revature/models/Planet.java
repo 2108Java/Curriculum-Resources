@@ -31,9 +31,11 @@ public class Planet {
 	@Column(name = "planet_description")
 	private String description;
 	
-	
 	private boolean rings;
 
+	//private List<Moon> myMoons;
+	
+	
 	public Planet(int id, String name, String description, boolean rings) {
 		super();
 		this.id = id;
