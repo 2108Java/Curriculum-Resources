@@ -13,7 +13,7 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name = "planets")
+@Table(name = "planet_table")
 public class Planet {
 	
 	//have to match 
@@ -25,11 +25,12 @@ public class Planet {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
-	@Column(name = "planet_name", nullable = false, unique = false)
+	@Column(name = "name", nullable = false, unique = false)
 	private String name;
 	
 	@Column(name = "planet_description")
 	private String description;
+	
 	
 	private boolean rings;
 

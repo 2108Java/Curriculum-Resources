@@ -50,8 +50,37 @@ public class PlanetDao {
 			return null;
 		}
 		
-		public List<Planet> selectPlanetByName(String s) {
-			return null;
+		public List<Planet> selectPlanetByName(String name) {
+			
+			//Hibernate is not aware of my particular business requirements. 
+			//retrieve a Planet based on it's "name", both of which Hibernate did not bother to cater for. 
+			
+			List<Planet> planetList = null;
+			Session ses = HibernateUtil.getSession();
+			
+			//Native SQL 
+				String sql = "select * from planets where planet_name = " + "'" + name + "';" ;
+				
+//				planetList = ses.createNativeQuery(sql,Planet.class).list();
+				
+				//kind of terrible, not modular, very dependant on a specific flavor of SQL 
+			
+			//Hibernate Query Language 
+				
+				String hql = "from Planet where name = '" + name + "'";
+				//no select key word and no * - I don't specify the columns I get back 
+				//we're targetting the Java objects themselves. 
+				
+				//HQL is to translate our Java object strings into a specific flavor of SQL. 
+				
+				planetList = ses.createQuery(hql,Planet.class).list();
+				
+				
+			//Criteria API (or Criteria Builder depcreated version)
+			
+			ses.close();
+			
+			return planetList;
 		}
 		
 		public List<Planet> selectPlanetWithBlueInDescription(){

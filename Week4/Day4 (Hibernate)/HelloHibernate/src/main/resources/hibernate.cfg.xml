@@ -26,19 +26,50 @@
  				 
  				 <property name="hibernate.connection.username"></property>
  				 <property name="hibernate.connection.password"></property>
- 				 <property name="hibernate.connection.url"></property>
+ 				 <property name="hibernate.connection.url">jdbc:postgresql://endpoint/postgres</property>
  				 <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
  				 <property name="hibernate.connection.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
  				 
  				 
  				 <!-- Additional Hibernate Configurations -->
  				 
- 				 <property name="hibernate.show_sql">true</property> <!-- Show the sql scripts being executed -->
- 				 <property name="hibernate.format_sql">true</property> <!-- fromat them to be human readable -->
+ 				 <property name="hibernate.show_sql">false</property> <!-- Show the sql scripts being executed -->
+ 				 <property name="hibernate.format_sql">false</property> <!-- fromat them to be human readable -->
  				 
+ 				 <!-- 
+ 				 	Connection pool 
+ 				 		A method of speeding up our database calls. 
+ 				 		Rather than creating a brand new connectino for every time we want to connect to the database. 
+ 				 		We start of with creating 10 (20 by default if not specified)
+ 				 			We simply recycle the connections, once we're done with a session, the connectino goes back 
+ 				 			to the pool 
+ 				 			
+ 				 		This is why Hibernate is actually faster than JDBC for database calls. 
+ 				  -->
  				 <property name="hibernate.connection.pool_size">10</property>
  				 
- 				 <property name="hibernate.hbm2ddl.auto">validate</property>
+ 				 
+ 				 <property name="hibernate.hbm2ddl.auto">create</property>
+ 				 <!-- 
+ 				 		DDL? Creating and manipulting our schemas. 
+ 				 		
+ 				 		CREATE: 
+ 				 			drops all existing tables & other objects with the associated names in your java project. 
+ 				 			DON'T USE THIS IN A PRODUCTION ENVIRONMENT 
+ 				 			For testing purposes, this might be useful, as you can simplify the database to exactly what you want. 
+ 				 			
+ 				 		VALIDATE: 
+ 				 			Hibernate checks to make sure the schema exists as expected before operation. 
+ 				 			
+ 				 		UPDATE: 
+ 				 			Hibernate will not delete anything. It'll only modify/add existing schema elements. 
+ 				 			Update the schema so that Hibernate still work!
+ 				 			
+ 				 		NONE: 
+ 				 			Hibernate does nothing to the schema. 
+ 				 			When our SQL developers as part of our organization don't want pesky java developers and manipulating their 
+ 				 				databases. 
+ 				  -->
  				 
  				 <mapping class = "com.revature.models.Planet"/>
  				
