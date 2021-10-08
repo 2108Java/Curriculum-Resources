@@ -2,8 +2,12 @@ package com.revature.dao;
 
 import java.util.List;
 
+import javax.persistence.Query;
+
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Restrictions;
 
 import com.revature.models.Planet;
 import com.revature.util.HibernateUtil;
@@ -20,7 +24,7 @@ public class PlanetDao {
 			ses.save(p);
 			
 			tx.commit();
-			ses.close();
+//			ses.close();
 			
 			return true;
 		}
@@ -43,11 +47,25 @@ public class PlanetDao {
 			
 			Planet p = ses.get(Planet.class, id);
 			
+//			ses.close();
+			
 			return p;
 		}
 		
 		public List<Planet> selectAllPlanets() {
-			return null;
+			
+			List<Planet> planetList = null;
+			
+			Session ses = HibernateUtil.getSession();
+			//Named Query 
+			
+			Query query = ses.getNamedQuery("viewAllPlanets");
+
+			planetList = query.getResultList();
+			
+//			ses.close();
+			
+			return planetList;
 		}
 		
 		public List<Planet> selectPlanetByName(String name) {
@@ -60,6 +78,8 @@ public class PlanetDao {
 			
 			//Native SQL 
 				String sql = "select * from planets where planet_name = " + "'" + name + "';" ;
+				// SELECT * FROM planets WHEERE planet_name = 'Earth';
+				
 				
 //				planetList = ses.createNativeQuery(sql,Planet.class).list();
 				
@@ -76,9 +96,23 @@ public class PlanetDao {
 				planetList = ses.createQuery(hql,Planet.class).list();
 				
 				
-			//Criteria API (or Criteria Builder depcreated version)
+			//Named Query 
+				Query query = ses.createNamedQuery("viewPlanetsWithName");
+				
+				query.setParameter("name", name);
+				
+				planetList = query.getResultList();
+				
+				
+			//Criteria API vs Criteria Builder depcreated version)
+				
+				//Criteria Builder 
+				Criteria criteria = ses.createCriteria(Planet.class)
+						.add(Restrictions.ilike("name", name));
+				
+				planetList = criteria.list();
 			
-			ses.close();
+//			ses.close();
 			
 			return planetList;
 		}

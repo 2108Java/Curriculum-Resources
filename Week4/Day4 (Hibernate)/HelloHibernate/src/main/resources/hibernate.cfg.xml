@@ -24,9 +24,9 @@
  					DRIVER 
  				 -->
  				 
- 				 <property name="hibernate.connection.username"></property>
- 				 <property name="hibernate.connection.password"></property>
- 				 <property name="hibernate.connection.url">jdbc:postgresql://endpoint/postgres</property>
+ 				 <property name="hibernate.connection.username">postgres</property>
+ 				 <property name="hibernate.connection.password">p4ssw0rd</property>
+ 				 <property name="hibernate.connection.url">jdbc:postgresql://database-2.cqoseij0k35s.us-east-2.rds.amazonaws.com/postgres</property>
  				 <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
  				 <property name="hibernate.connection.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
  				 

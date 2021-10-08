@@ -1,0 +1,51 @@
+Docker: 
+	Container
+	Setting up Docker in ec2 instance 
+	Dockerfile:
+		Docker file keywords/commands e.g. FROM, RUN, CMD
+	Docker daemon:
+		terminal docker commands. 
+	Docker image 
+	Docker containers 
+	Creating a docker file -> making an image -> running a container 
+
+DevOps: 
+	DevOps
+	Devops integrated now with Agile. 
+	CICD: 
+		Continous intergration 
+		Continous delivery
+		Continous deployment 
+			deliver vs deployment 
+	Jenkins: 
+		What it is?
+		Set up a CICD pipeline
+		Jenkins build: 
+			Maven : 
+			Maven build lifecycle 
+			POM
+			Maven repository 
+
+		Jenkins job/project
+
+Hibernate
+	ORM framework 
+	interfaces in hibernate: Session, SessionFActory, Configuration, Query, etc.
+	JPA vs Hibernate annotations
+		Ways to query our database: 
+			HQL 
+			Native SQL
+			Criteria API 
+	Named queries 
+	Theory: 
+		 ACID 
+		Service Locator Design Pattern 
+		XML overview (XML vs HTML) 
+		CAching: 
+			Level 1 caching (Session scope)
+			LEvel 2 caching (Session Factory scope)
+
+		
+
+	
+
