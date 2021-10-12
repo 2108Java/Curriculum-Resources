@@ -1,0 +1,58 @@
+Angular 
+
+AngularJS vs Angular 4+ 
+
+Angular is a Typescript-based open-source framework used to develop dynamic single page
+	applications. (Created by Google) Angular runs on Node.js environment. 
+
+
+Single page application?
+	A single page that does all the work, all the view the user needs. 
+
+	A SPA is a web application that fits on a single page in the browser. 
+	All of our JS, HTML and CSS code is retrieved ONCE, onto a single web page. 
+
+	The benefits: 
+		Fast and responsive: 
+			Once our page is loaded up, all the resoureces are there for the client.
+
+		Caching: 
+			Because we only need to load up the resources once, all the informatino 
+			can be cached and stored on the client side. (No need for repeat connections)
+
+
+	Disadvantages:
+		Front loaded: 
+			Because we're loading up everything, the first load is slow. 
+
+		Poor SEO performance: 
+			Search Engine Optimization. 
+
+		Cross-site scripting attacks: 
+			SPAs are less secure against those. 
+
+
+Typescript: 
+
+	Typescript is a super set of javascript. Everything js can do, ts can do more. 
+
+	Typsescript was made by Microsoft and maintained by them. 
+
+	TS main purpose is to introduce back OOP as well as Strongly typed syntax and 
+	type safety checking. 
+
+
+Node: 
+	node.js is an open-source, cross-platform *runtime environment* built on Chrome's 
+	B8 Javascript engine. 
+
+	It allows us to execute JS code outside of a web browser and provides us a library 
+	of various JS modules. 
+
+	We use Node.js and npm as tools for building Angular. 
+
+npm: 
+	node package managers, allows us to install everything related to node. 
+
+
+
