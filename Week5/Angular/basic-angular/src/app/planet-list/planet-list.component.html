@@ -1,0 +1,86 @@
+<div class='panel panel-primary'>
+    <div class='panel-heading'>
+
+        <!--
+                The {{}} syntax is used for interpolation. Interpolation evalues
+                an expression. You can do sipmle operations like addtion or 
+                refer to variables from the TS file. 
+
+                We USE interpolation to achieve ONE-WAY databinding. 
+                (i.e. from TS -> HTML)
+
+                One-way databinding (with Interpolation) projects values in TS to 
+                HTML page to be displayed. So any changes to the TS will immediatly 
+                effect the HTML, but NOT the other way around. 
+
+        -->
+       <h1>Welcome {{7+8 + ""+ currentUser}}</h1> 
+    </div>
+
+    <div class = 'panel-body'>
+        <div class = 'row'>
+            <div class = 'col-md-2'>Filter by: </div>
+            <div class = 'col-md-4'>
+
+                <!--
+                    The [()] syntax is used for 20way binding. Also referred to as 
+                        'apple in the box'. The HTML values and the TS values are 
+                        tied to each other. If one changes, the other changes. 
+
+                    Effectively this is event and property binding together. 
+                    An 'event' is triggered to change the value, then we grab the 
+                    value again using 'property' binding. 
+
+
+                -->
+                <input type = 'text' [(ngModel)] = 'InputField' placeholder="filter">
+            </div>
+        </div>
+        <div class = 'row'>
+            <div class = 'col-md-6'>
+                <h3> {{InputField}}</h3> <!-- Depending on context, wether we
+                        are using a getter or setter-->
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class = 'table-responsive'>
+
+    <button class='btn btn-primary' (click) = 'toggleTable()'><!-- event binding, syntax ()-->
+        {{showTable? 'Hide Table':'Show Table'}} <!--Using a ternary operator-->
+        <!-- expression? if true: if false -->
+    </button>
+
+    <table class = 'table' *ngIf = 'showTable'>
+        <thead>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Livibility score</th>
+        </thead>
+        <tbody>
+            <!--
+                *ngFor is an example of a structural directive. 
+                structural directives will modify the 'DOM' of the page. 
+                in this case, it is modifying the bymber of rows in our table!
+            -->
+            <tr *ngFor = 'let i of filteredPlanets'>
+                <td>
+                    <img [src]='i.image' 
+                        [style.width.px] = 'imageWidth'
+                        [style.margin.px] = 'imageMargin'
+                        [alt] = 'i.image'
+                    > <!-- 2nd type of data-binding, property binding, syntax is []-->
+                </td>
+                <td>{{i.name}}</td> <!--We're using one-way binding again!-->
+                <td>{{i.livibility}}</td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</div>
+
+
