@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { FirstComponentComponent } from './first-component/first-component.component';
 import { SecondComponentComponent } from './second-component/second-component.component';
 import { PlanetListComponent } from './planet-list/planet-list.component';
+import { StarsComponent } from './shared/stars/stars.component';
+import { ColorDirectiveDirective } from './color-directive.directive';
 
 
 @NgModule({ //the only diffierence is the decorator (not annotation), that tells it 
@@ -18,7 +20,9 @@ import { PlanetListComponent } from './planet-list/planet-list.component';
     FirstComponentComponent,
     MyClass,
     SecondComponentComponent,
-    PlanetListComponent
+    PlanetListComponent,
+    StarsComponent,
+    ColorDirectiveDirective
   ],
   imports: [ //used to import external modules
     BrowserModule,

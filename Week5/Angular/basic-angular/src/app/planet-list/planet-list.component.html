@@ -41,6 +41,10 @@
                 <h3> {{InputField}}</h3> <!-- Depending on context, wether we
                         are using a getter or setter-->
             </div>
+            <div class = 'col-md-6'>
+                <h3> {{starEventString}}</h3>
+
+            </div>
         </div>
 
     </div>
@@ -54,7 +58,7 @@
         <!-- expression? if true: if false -->
     </button>
 
-    <table class = 'table' *ngIf = 'showTable'>
+    <table class = 'table' *ngIf = 'showTable && filteredPlanets.length'>
         <thead>
             <th>Image</th>
             <th>Name</th>
@@ -74,8 +78,15 @@
                         [alt] = 'i.image'
                     > <!-- 2nd type of data-binding, property binding, syntax is []-->
                 </td>
-                <td>{{i.name}}</td> <!--We're using one-way binding again!-->
-                <td>{{i.livibility}}</td>
+                <td [app-color-directive]> <!-- custom attribute!-->
+                    
+                    {{i.name}}
+            
+                </td> <!--We're using one-way binding again!-->
+                <td><app-stars [score] = 'i.livibility'
+                    (childEvent) = 'starEventWasTriggered($event)'
+                    (sendingPlanet) = 'planetWasSentFromChild($event)'
+                    ></app-stars></td>
             </tr>
         </tbody>
 

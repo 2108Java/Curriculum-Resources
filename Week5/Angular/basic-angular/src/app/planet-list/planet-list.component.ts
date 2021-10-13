@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Planet } from './Planet';
+import { Planet } from './planet';
 
 @Component({
   selector: 'app-planet-list',
@@ -14,11 +14,24 @@ export class PlanetListComponent implements OnInit {
 
   //used to demo structural directives , *ngFor
   planets: Planet[] = [];
+
+  //demoing event from star component
+  starEventString: string = 'placeholder';
+
+  starEventWasTriggered(message: string): void {
+    this.starEventString = message;
+  }
+
+  planetWasSentFromChild(message: Planet): void {
+    console.log(message);
+  }
   
 
   //demoing filter function
   filteredPlanets: Planet[] = [];
   actualInputField: string = 'Placeholder';
+
+  //also create a filter based on libivility 
 
   get InputField(){
     return this.actualInputField;
@@ -33,15 +46,20 @@ export class PlanetListComponent implements OnInit {
       console.log(userInput);
 
 
+    //This is another ternary expression, that only filters if there is an input 
+    // no input means that the "acutalInputField" is a empty string 
+    // emptry string is a falsy value 
     this.filteredPlanets = (this.actualInputField)?
     this.performFilter(this.actualInputField):this.planets//my filtereted function return value
 
+    // this.filteredPlanets = this.performFilter(this.actualInputField);
   }
 
-  performFilter(filterValue: string): Planet[] {
+  performFilter(filterValue: string): Planet[] { // a function that I define to filter based on the planet's names
 
     return this.planets.filter(//inbuild method where we define the filter condition
 
+      //it filters based on whether the filtervalue exists inside of the planet name 
       (planet:Planet) => planet.name.toLowerCase().indexOf(filterValue.toLowerCase())!= -1
     ); 
   }

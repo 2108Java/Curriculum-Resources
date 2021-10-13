@@ -1,0 +1,51 @@
+Angular Folder Structure 
+
+	node_modulus: library/dependencies that our angular project is going to use!
+
+	package.json: is the confiugration for our Angular projecter. It's a json file, 
+			smimilar to our pom.xml file in Maven. 
+
+	src: 
+		Is mainly where we are going to be working in. 
+		It contiains the "single" html file that will be our view. 
+
+	webpack: 
+		Used to bundle together our Javascript modules (i.e. files) into a single
+		Javascript file(s). 
+
+
+Angular key terms: 
+	
+	Component: 
+		Component is responsible for a portion of a view of the page
+		Can be created in CLI, using ng generate comopnent <name>
+		Components come by default with: .html, .css, .ts, .spec.ts 
+		A componet is declared in the ngModule, that it can be used by Angular. 
+		@Component is what makes a .ts class into a component 
+			(templateUrl, StyleUrls, selector)
+
+	Data binding: 
+		one-way binding (using interpolation) {{}}
+		property-binding []
+		event-binding () 
+		2-way binding: 
+			by default, we don't get to use it. 
+			We have to actually import it from the dependencies we have. 
+
+	Directives: 
+		Manipulate our html view 
+		Structrual Directives: Add or remove elements from the DOM
+			*ngIf
+			*ngFor 
+
+		Attribute Directives: modify the attributes of existing elements!
+			There are inbuilt ones, that I'll let you find out. 
+			I'm going to make my own!
+
+
+Sending information back and forth in a parent child component relationship 
+
+	Sending info from child 
+
+	click event -> child function to trigger -> child function triggers an event of it's own
+	-> parent comopnent triggers its function based on the child's event!
