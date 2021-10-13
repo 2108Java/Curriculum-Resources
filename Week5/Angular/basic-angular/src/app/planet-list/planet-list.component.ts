@@ -15,6 +15,27 @@ export class PlanetListComponent implements OnInit {
   //used to demo structural directives , *ngFor
   planets: Planet[] = [];
 
+
+  //demoing deleting a planet!
+  deletePlanet(event: any){
+
+    let planetName: string = event.target.id;
+    let planetPosition: number = -1;
+
+    for(let p of this.planets){
+      if(p.name == planetName){
+
+        planetPosition = this.planets.indexOf(p);
+
+        this.planets.splice(planetPosition,1);
+
+        this.filteredPlanets = this.planets;
+      }
+    }
+    
+    // this.filteredPlanets = this.planets;
+  }
+
   //demoing event from star component
   starEventString: string = 'placeholder';
 
@@ -30,8 +51,19 @@ export class PlanetListComponent implements OnInit {
   //demoing filter function
   filteredPlanets: Planet[] = [];
   actualInputField: string = 'Placeholder';
+  numberInputField: number = 0;
 
   //also create a filter based on libivility 
+  get NumberInputField(){
+    return this.numberInputField;
+  }
+
+  set NumberInputField(userInput: number){
+    this.numberInputField = userInput;
+
+    this.filteredPlanets = this.performLivibilityFilter(userInput);
+
+  }
 
   get InputField(){
     return this.actualInputField;
@@ -54,6 +86,15 @@ export class PlanetListComponent implements OnInit {
 
     // this.filteredPlanets = this.performFilter(this.actualInputField);
   }
+
+  performLivibilityFilter(filterValue: number): Planet[] {
+
+    return this.planets.filter(
+      (planet: Planet) => { return filterValue <= planet.livibility;} //if the livibility is greater than the filter. 
+      
+    )
+  }
+
 
   performFilter(filterValue: string): Planet[] { // a function that I define to filter based on the planet's names
 

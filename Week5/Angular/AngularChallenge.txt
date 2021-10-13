@@ -1,0 +1,10 @@
+Challenges: 
+
+	Create another filter for us to filter by the livibility. 
+	(any planet with a higher score than what you've inputed)
+	
+		Creating a new input inside of html
+		creating a new filter function as well. 
+
+	Create a delete button, that can delete rows on the table. 
+	
