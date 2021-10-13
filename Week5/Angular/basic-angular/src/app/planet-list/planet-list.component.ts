@@ -28,7 +28,7 @@ export class PlanetListComponent implements OnInit {
     this.actualInputField = userInput;
 
     //Once I set a value, what should happen?
-      //We should instantly start filtering!
+    //We should instantly start filtering!
 
       console.log(userInput);
 
@@ -36,26 +36,14 @@ export class PlanetListComponent implements OnInit {
     this.filteredPlanets = (this.actualInputField)?
     this.performFilter(this.actualInputField):this.planets//my filtereted function return value
 
-    console.log(this.filteredPlanets);
-
   }
 
-  performFilter(filter: string): Planet[]{
+  performFilter(filterValue: string): Planet[] {
 
-    return this.planets.filter( //filter is an inbuilt method for all arrays 
+    return this.planets.filter(//inbuild method where we define the filter condition
 
-      (planet:Planet) => { //filter will invoke this function, for every object it has.
-
-        //I'm checking if a substring exists that matches the name of the planet. 
-        //if the filter does not match anything, we will return a -1 
-        //I'm return a true or a false, based on wether the filter exists in the name.
-        console.log(planet.name.toLowerCase());
-        console.log(filter.toLocaleLowerCase()); 
-        // planet.name.toLowerCase().indexOf(filter.toLowerCase())!= -1
-        planet.name.toLowerCase().indexOf(filter.toLowerCase())!= -1;
-      }
-    )
-    
+      (planet:Planet) => planet.name.toLowerCase().indexOf(filterValue.toLowerCase())!= -1
+    ); 
   }
 
   //used to demo property binding for table
