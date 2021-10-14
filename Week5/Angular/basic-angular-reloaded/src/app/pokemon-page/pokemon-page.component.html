@@ -7,7 +7,7 @@
 
 
 <!-- For this example, we're not using form! from is a html built in tool
-        We want to use JavaScript. HTML is simply a document. 
+        We want to use Angular.  
 -->
 
 <!--What would I like to show about the pokemon?-->
@@ -16,10 +16,11 @@
 <!-- The type of the pokemon-->
 <div class = "info">
     <div class = "text-center">
-        <img id = "pokemonImg">
-        <img id = "backImg">
-        <h3 id = "pokemonName"></h3>
-        <h3 id = "pokemonType"></h3>
+        <img [src] = 'frontSprite'>
+        <img [src] = 'backSprite'>
+        <h3 >{{'Pokemon name: ' + pokemonName}}</h3>
+        <h3 >{{'Pokemon type: ' + pokemonType}}</h3>
+        <h3>{{'Pokemon id: ' + pokemonId}}</h3>
     </div>
     
 </div>
@@ -30,6 +31,6 @@
 <!--This is the input section of our page, for the user to send us information-->
 
 <div class = "container">
-    <input type="text" id="pokemonId" placeholder="Enter Pokemon Id" class = "form-control">
-     <input type="submit" class="form-control btn btn-success" id="pokemonSubmit">
+    <input type="number" class = 'form-control' [(ngModel)] = 'pokemonId'>
+    <button class = "form-control btn btn-info" (click) = 'pokeButtonClick()'>Capture Pokemon</button>
 </div>

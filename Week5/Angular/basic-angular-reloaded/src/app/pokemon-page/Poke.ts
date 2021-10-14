@@ -2,9 +2,9 @@
 export interface Poke{
     name: string,
     id: number,
-    images: {
-        front_sprite: string,
-        back_sprite: string
+    sprites: {
+        front_default: string,
+        back_default: string
     },
     type: string
 }
