@@ -16,8 +16,12 @@
  * 
  *  "tsc -t <version> *filename*.ts"
  *  tsc -t es2015 TS-Overview.ts
+ *
+ * With future version of JS we get more feature, however not all browsers can support the latest versions of Js. 
+ * Typescript is the best of both worlds, we get all the latest features provided by ECMA but we can also compile into 
+ * 		older version of JS to let the scripts run in browsers. 
  * 
- * Why transpile rahter tha compile?
+ * Why transpile rather than compile?
  *  (compiling is when we go from a higher level language (more abstraction) -> lower level code (bytecode))
  * 
  *  Transpiling is where we convert a similar level language into another language, TS -> JS 
@@ -133,6 +137,8 @@ function emptyFunction(): void{
 //      Hiding away the details of what's going on to the developer. 
 //      interfaces, abstract classes 
 
+
+//-------------------------------------------Abstraction, inheritance, polymorphsim-------------------------------------------
 interface Moon { //We define a moon interface, so any object of type Moon has to have a name. 
     name: string 
 }
@@ -249,8 +255,15 @@ console.log(neutron.toString())
 
 
 
-//Encapsulation 
+//-------------------------------------------Encapsulation-----------------------------------------------------------------
+// To allow encapsulation in TS, we need to compile to a version of JS beyond es5. 
+//Getter's and setters are functionally the same as Java OOP, but with brand new syntax. 
 
+// Getters and Setters are defined with the keywords "get" and "set"
+// Both methods must have the same name, and the data types must match (return type of getter and argument type of setter)
+// Invoking both functions are also different: 
+// we don't do animal.get() , instead we do animal.Age
+// we don't do animal.set(value), instead we do animal.Age = value; 
 class Animal {
 
     //All the attributes are public
@@ -288,7 +301,10 @@ dog.Age = 10; //we're using our setter
 console.log(dog.Age);
 
 
-//Some really weird Typescript 
+//( Some really weird Typescript )
+//To cut down on coding syntax, we can declare the variable's access modifier inside of the constructor arguments. 
+// This will associate the argument as an attribute of the instantiated object. 
+// Below is 2 difference implementation of class, each are functionally the same but one has less syntax. 
 
 class Cat {
 

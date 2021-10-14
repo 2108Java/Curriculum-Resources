@@ -1,0 +1,9 @@
+<h1>Welcome to my Profile page! {{currentUser}}</h1>
+
+<h1> Here is a list of all your planets</h1>
+
+<ul >
+    <li *ngFor = 'let i of planets'>
+        {{i.name}}
+    </li>
+</ul>

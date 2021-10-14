@@ -10,6 +10,7 @@ import { SecondComponentComponent } from './second-component/second-component.co
 import { PlanetListComponent } from './planet-list/planet-list.component';
 import { StarsComponent } from './shared/stars/stars.component';
 import { ColorDirectiveDirective } from './color-directive.directive';
+import { PrependPipePipe } from './prepend-pipe.pipe';
 
 
 @NgModule({ //the only diffierence is the decorator (not annotation), that tells it 
@@ -22,7 +23,8 @@ import { ColorDirectiveDirective } from './color-directive.directive';
     SecondComponentComponent,
     PlanetListComponent,
     StarsComponent,
-    ColorDirectiveDirective
+    ColorDirectiveDirective,
+    PrependPipePipe
   ],
   imports: [ //used to import external modules
     BrowserModule,
