@@ -1,0 +1,12 @@
+<div>
+    <p>trigger works!</p>
+    <p>Here is your input: {{input}}</p>
+    <p>Here is your service message: {{capturedMessage}}</p>
+
+    <input type="text" [(ngModel)] = 'input'>
+    <button (click) = 'changeMessageWithSetter()'>Change value with setter!</button>
+    <button (click) = 'grabMessageWithGetter()'>Grab value with getter!</button>
+    <button (click) = 'bothSetAndGrab()'>Both grab and set</button>
+    <button (click) = 'usingBehaviorToSetMessage()'>Using Observables!</button>
+</div>
+
