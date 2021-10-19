@@ -1,0 +1,59 @@
+Pipes : 
+
+Routing : 
+	Because we are in a single page application, we need to set up routing
+	Otherwise we have everything all on the same page for the user. 
+
+	We have to provide a <router-outlet> inside of our app.component.html
+	(our root tag, which contains all the other tags). 
+		<router-outlet> is a representation of any components that we
+			may render. 
+
+	<router-outlet> knows which component to render, depending on what we
+		configured in our app-routing.module.ts as well as the url. 
+
+	We can use <a routerLinks> to take advantage of the SPA caching ability. 
+	It stops us from reloading the page, like in a tradtional anchor tag. 
+
+	Angular routing can be created from the very start, i.e. creating the project.
+	Or it can be added in as a module into our project. How? Up to you. 
+
+	With angular routing, we now also need to add guards to the endpoints. 
+	We create a guard using: 'ng generate guard <name>'
+
+	A guard can have multiple 'guarding' methods: 
+		CanActivae
+		CanActivateChild
+		CanDeactivate
+		Resolve
+		CanLoad
+
+	We use guards as part of the routing modules attribute, routes: Route[]
+	Guards can restrict or allow access, based on the method provided. 
+
+	We can also grab path variables by using ActivatedRouter in our components. 
+	This is a dependency that can be added to our components, and is automatically 
+	injected for us by Angular. 
+
+	
+Services : 
+
+	Services allows us to globally communicate to any and all classes within
+	Angular (typically components, because they use the data to render the 
+	info to the user).
+
+	Services follow the injectable design pattern. Angular has a dependency 
+	container, the container will inject dependencies where ever it sees 
+	a class needing it.  
+
+	PlanetService: 
+		Sending hardcoded in data to other components
+	PokemonService: 
+		First message the PokemonAPI, and send it to the componet 
+		(once it receives a request). 
+
+	HAve a decorator, @Injectable(providedIN: 'root') - specifiying where
+	the service can be injected. Technically it isn't necessary to use it, as 	
+	we can also declare in app.module.ts, but in the providers section. 
+
+	

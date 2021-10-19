@@ -18,7 +18,50 @@
 		A spring bean is an object that you've told Spring to manage for you. (NOTHING TO DO WITH JAVA BEAN)
  -->
  
- <bean name = "PlanetDaoFirst" class = "com.revature.repo.PlanetDaoImpl"></bean>
+ <bean name = "PlanetDaoFirst" class = "com.revature.repo.PlanetDaoImpl" scope = "prototype"></bean>
  <bean name = "PlanetDaoSecond" class = "com.revature.repo.PlanetDaoImpl"></bean>
+ 
+
+ 
+ <!-- Scopes of a Sprring bean!
+ 		Singleton (default) tells Spring to ONLY create a SINGLE instance 
+ 		Prototype tells Spring ot make as many instances as required - create a new instance when someone asks for it!
+ 		(Web Related):
+ 			Request 
+ 			Session
+ 			GlobalSession 
+  -->
+  
+  <!--  Bean Wiring 
+  			Telling Spring to manage object for us and how to setup the beans!
+  			
+  			Types of wiring/injection: 
+  				Constructors
+  				Setters
+  				Field (coming soon)
+  				Interface (extra) 
+   -->
+   
+   <!-- Constructor injection -->
+   
+    <bean name = "AuthService" class = "com.revature.service.AuthService">
+    	<constructor-arg index = "0" type = "String" value = "Fiji"></constructor-arg>
+    	<constructor-arg index = "1" type = "int" value = "1"></constructor-arg>
+    </bean>
+    
+    
+   <bean name = "PlanetServiceBean" class = "com.revature.service.UserService" scope = "prototype">
+   		<constructor-arg index = "0" ref = "PlanetDaoFirst"></constructor-arg>
+   		<constructor-arg index = "1" ref = "AuthService"></constructor-arg>
+   </bean>
+   
+   
+   
+   <!-- Setter injection -->
+   <bean name = "PlanetServiceBeanUsingSetters" class = "com.revature.service.UserService" scope = "prototype">
+   		<property name = "planetDao" ref = "PlanetDaoSecond"></property>
+   		<property name = "authService" ref = "AuthService"></property>
+   		
+   </bean>
  
  </beans>

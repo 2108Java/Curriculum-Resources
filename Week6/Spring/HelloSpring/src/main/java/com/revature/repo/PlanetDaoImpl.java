@@ -3,14 +3,17 @@ package com.revature.repo;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.revature.models.Planet;
 
+@Repository
 public class PlanetDaoImpl implements PlanetDao {
 	
 	private List<Planet> planetListHardCoded = new ArrayList<>();
 	
 	public PlanetDaoImpl() {
-		System.out.println("inside no args constructor! ");
+//		System.out.println("inside no args constructor! ");
 		initilazeList();
 		
 	}

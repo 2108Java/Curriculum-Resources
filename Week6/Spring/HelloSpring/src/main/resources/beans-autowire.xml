@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+		
+	
+	<!-- 
+		What is autowiring?
+			Autowiring is when Spring scans your objects to determine WHICH objects need which dependeencies!
+			
+		injecting/wiring vs autowire?
+			Injection is HOW we inject our dependencies. 
+			autowiring is asking WHICH depednencies do we need!
+			
+		autowire modes: 
+			"no": means Spring will not autowre anything. This is the default settings. 
+			"ByType": means Spring will look at the class's datatypes then match those datatypes in the IoC Container 
+				Injection strategy: setter
+				
+			"ByName": means Spring will look at the class's variable names then match those variables to beans with the same name 
+				in the IoC container. Bean name == attribute name 
+				Injection strategy: setter
+				
+			"constructor": works similar to ByType, i.e. it will check the constructor with the MOST dependencies. It will use ByType 
+				initially, if that fails then it will use ByName strategy. 
+				injection strategy: consturctor
+			
+	 -->
+	 
+	 <bean name = "planetDao" class = "com.revature.repo.PlanetDaoImplButBetter"></bean>
+	 <bean name = "authService" class = "com.revature.service.AuthService"></bean>
+	 
+	 <bean name = "PlanetServiceAutoByName" class = "com.revature.service.UserService" autowire="byName"></bean>
+	 
+	 <!-- Autowiring byName means that Springs looks for dependencies with matching names! -->
+	 <bean name = "PlanetServiceAutoByType" class = "com.revature.service.UserService" autowire="byType"></bean>
+	 
+	 <bean name = "PlanetServiceAutoByConstructor" class = "com.revature.service.UserService" autowire="constructor"></bean>
+	 
+	 
+	 
+	 
+		
+</beans>
