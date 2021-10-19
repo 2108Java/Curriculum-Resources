@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+		
+
+<!-- 
+	We are going to need a few tools: 
+			Beans 
+			Context 
+			
+	Our Inversion of controller will control "beans". 
+		Beans are our layers/dependencies that we have in our project. 
+		
+	What is a Spring bean?
+		A spring bean is an object that you've told Spring to manage for you. (NOTHING TO DO WITH JAVA BEAN)
+ -->
+ 
+ <bean name = "PlanetDaoFirst" class = "com.revature.repo.PlanetDaoImpl"></bean>
+ <bean name = "PlanetDaoSecond" class = "com.revature.repo.PlanetDaoImpl"></bean>
+ 
+ </beans>
