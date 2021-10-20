@@ -1,11 +1,14 @@
 package com.revature;
 
+import java.lang.reflect.Proxy;
+
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.revature.controller.FoodController;
 import com.revature.controller.FoodControllerV2;
+import com.revature.service.ProxyApp;
 
 public class MainDriver {
 	
@@ -40,9 +43,9 @@ public class MainDriver {
 
 	public static void main(String[] args) {
 	
-		FoodControllerV2 foodController = container.getBean("BetterController",FoodControllerV2.class);
+//		FoodControllerV2 foodController = container.getBean("BetterController",FoodControllerV2.class);
 		
-		viewFood();
+//		viewFood(); //MainDriver isn't a bean controlled by Spring, so advices don't trigger here!
 		
 //		foodController.viewFood();
 //		foodController.viewFood();
@@ -52,6 +55,14 @@ public class MainDriver {
 //		foodController.viewFood();
 //
 //		foodController.viewFood();
+		
+		
+		ProxyApp app = container.getBean("FakeApplication",ProxyApp.class);
+		
+//		app.arrayMethod(null);
+//		app.fruitMethod();
+		app.funMethod(0);
+		app.funMethod(0,true);
 
 
 	}
