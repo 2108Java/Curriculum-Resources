@@ -22,6 +22,8 @@ public class FoodDaoImpl implements FoodDao {
 	
 	public FoodDaoImpl() {
 		
+		
+		
 		initializeFood();
 		
 	}
@@ -33,7 +35,7 @@ public class FoodDaoImpl implements FoodDao {
 		foodList.add(new Food(1, "Hot Dog", 2));
 		foodList.add(new Food(2, "Apples", 3.50));
 		foodList.add(new Food(3, "Sausage Roll", 4));
-		
+//		System.out.println("Iniatlizing database");
 		
 	}
 
@@ -41,6 +43,8 @@ public class FoodDaoImpl implements FoodDao {
 	public void insertFood(Food f) {
 		
 		foodList.add(f);
+		
+//		System.out.println("Adding food");
 
 	}
 
@@ -48,11 +52,13 @@ public class FoodDaoImpl implements FoodDao {
 	public void deleteFood(Food f) {
 
 		foodList.remove(f.getId());
+		
+//		System.out.println("Removing food");
 	}
 
 	@Override
 	public List<Food> viewAllFood() {
-
+//		System.out.println("Viewing all foods!");
 		return foodList;
 	}
 

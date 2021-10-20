@@ -36,6 +36,14 @@
 	    <version>5.3.10</version>
 	</dependency>
 	
+	<!-- Spring ASPECT -->
+	<!-- https://mvnrepository.com/artifact/org.springframework/spring-aspects -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-aspects</artifactId>
+	    <version>5.3.9</version>
+	</dependency>
+	
 	
   	
   

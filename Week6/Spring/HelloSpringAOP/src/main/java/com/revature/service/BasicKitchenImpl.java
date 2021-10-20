@@ -16,6 +16,8 @@ public class BasicKitchenImpl implements KitchenService {
 	
 	@Override
 	public List<Food> viewAllMenuItems() {
+		
+//		System.out.println("Service layer: viewing all menu items!");
 
 		return foodDao.viewAllFood();
 	}
