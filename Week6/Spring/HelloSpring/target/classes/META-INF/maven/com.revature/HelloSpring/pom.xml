@@ -11,7 +11,7 @@
   
   <dependencies>
   
-  	<!-- SPRING CORE -->
+  	<!-- SPRING CORE - Provides us the IoC Container -->
   	<!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
 	<dependency>
 	    <groupId>org.springframework</groupId>
@@ -20,7 +20,7 @@
 	</dependency>
 	
 	
-	<!-- SPRING BEAN -->
+	<!-- SPRING BEAN - Provides us the Dependency Injection (DI) feature  -->
 	<!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->
 	<dependency>
 	    <groupId>org.springframework</groupId>
@@ -28,7 +28,7 @@
 	    <version>5.3.10</version>
 	</dependency>
 	
-	<!-- Spring CONTEXT -->
+	<!-- Spring CONTEXT - Allows us to use annotations  -->
 	<!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
 	<dependency>
 	    <groupId>org.springframework</groupId>
