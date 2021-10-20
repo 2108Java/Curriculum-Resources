@@ -47,18 +47,18 @@ public class AspectExample {
 	
 	//Food controller logging!
 	
-	@Before("execution(* viewFood())") //specify that this advice will trigger before a particular execution! This method will execute at every method invocation!
-	public void beforeAdvice(JoinPoint jp) {
-		numberOfExecutions++;
-		System.out.println(jp);
-		System.out.println("I'm logging stuff before the viewFood Method is invoked! number of times invoked: " + numberOfExecutions);
-		
-	}
-	
-	@After("execution(* viewFood())")
-	public void afterAdvice(JoinPoint jp) {
-		System.out.println("I'm loggin stuff afterwards to check that it went well!");
-	}
+//	@Before("execution(* viewFood())") //specify that this advice will trigger before a particular execution! This method will execute at every method invocation!
+//	public void beforeAdvice(JoinPoint jp) {
+//		numberOfExecutions++;
+//		System.out.println(jp);
+//		System.out.println("I'm logging stuff before the viewFood Method is invoked! number of times invoked: " + numberOfExecutions);
+//		
+//	}
+//	
+//	@After("execution(* viewFood())")
+//	public void afterAdvice(JoinPoint jp) {
+//		System.out.println("I'm loggin stuff afterwards to check that it went well!");
+//	}
 	
 	
 //	@Before("execution(* *(..))") //triggering of all methods, regardless of return type, name and parameters we pass in!
