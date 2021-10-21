@@ -10,6 +10,7 @@ import lombok.ToString;
 /*
  * Every time we create a pojo, we have to genereate a lot of boiler plate code 
  * 
+ * lombok helps to reduce the amount of boiler plate code
  */
 
 @Data
