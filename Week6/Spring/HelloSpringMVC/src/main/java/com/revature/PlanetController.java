@@ -43,7 +43,7 @@ public class PlanetController {
 	}
 	
 	@GetMapping(value = "/planets/{name}")
-	@RequestMapping(value = "/planets/{name}", method = RequestMethod.GET)
+//	@RequestMapping(value = "/planets/{name}", method = RequestMethod.GET)
 	public @ResponseBody Planet selectPlanetByName( @PathVariable("name") String name) {
 		
 		return pdao.selectPlanetByName(name);
