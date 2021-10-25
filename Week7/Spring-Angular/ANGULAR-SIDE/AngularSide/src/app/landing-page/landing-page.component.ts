@@ -23,6 +23,17 @@ export class LandingPageComponent implements OnInit {
     )
   }
 
+  firstButtonWithPost(){
+    // this.loginMessage += this.loginMessage;
+
+    this.ajaxSession.loginRequestWithPost().subscribe(
+
+        response => { //the message is now the entire response!
+          this.loginMessage += " " + response.body?.message;
+        }      
+    )
+  }
+
   secondButton(){
     
     this.ajaxSession.logoutRequest().subscribe(

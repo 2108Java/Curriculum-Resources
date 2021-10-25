@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -11,10 +11,14 @@ export interface User{
   adminAccess: boolean
 }
 
+
+
 @Injectable({
   providedIn: 'root'
 })
 export class AjaxSessionService {
+
+  
 
   constructor(private myHttpClient: HttpClient) { }
 
@@ -25,10 +29,19 @@ export class AjaxSessionService {
     
   }
 
-  loginRequestWithPost(): Observable<Message>{
+  // httpOptions = {
+  //   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+   
+  // withCredentials: true, 
+  // observe: 'response' as 'response'
+  // };  
+
+  loginRequestWithPost(): Observable<HttpResponse<Message>>{ //instead of the json, we get the entire response.
     //post request with an empty body
-    return this.myHttpClient.post<Message>("http://localhost:9000/login",
-    {withCredentials: true}); 
+    return this.myHttpClient.post<Message>("http://localhost:9000/login", //uri
+    {}, //body 
+    {withCredentials: true,observe: 'response' as 'response'} //http options, key value pairs.
+    ); 
     
   }
 

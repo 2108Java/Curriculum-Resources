@@ -11,7 +11,7 @@ public class SpringBootAndSpringDataApplication {
 	 * 
 	 * It streamlines the process by assuming a lot of things for us and autoconfiguring the project! 
 	 * 
-	 * 
+	 * https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#reference
 	 */
 
 	public static void main(String[] args) {
