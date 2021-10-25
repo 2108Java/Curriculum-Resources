@@ -1,0 +1,14 @@
+
+#YML : YML is not a Markup Language
+
+#org.random.resource1
+#org.random.resource1
+#org.random.resource1
+
+#org:
+#   random:
+#     resource1:
+#     resource2:
+#     resource3: 
+
+server:  port: 9000 
