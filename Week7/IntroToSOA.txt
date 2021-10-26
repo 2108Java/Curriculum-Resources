@@ -1,0 +1,19 @@
+What is a web service?
+	A function or work that is provided by a server (for a client) over the web network. 
+
+	Benefits of web services: 
+		Platform independence. 
+
+SOA: Service Orienbtated Architecture. 
+	Instead of having a monolithic application we have multiple services that communicate 
+	with each other over http (or any network messaging protocol) - with each service handling
+	each business responsibilty. 
+
+	Benefits: 
+		Language Independence 
+		Modular Buiness Services (Each service can evolve independently) 
+		Scalability 
+		Code Reuse 
+
+Microservices are a steup up from SOA: 
+	We reduce a business responsiblity to single respoisbility services: 

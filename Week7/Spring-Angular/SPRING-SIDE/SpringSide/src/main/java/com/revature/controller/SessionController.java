@@ -19,6 +19,7 @@ public class SessionController {
 		return new Message("Hello");
 	}
 	
+	@PostMapping(value = "/login")
 	@GetMapping(value = "/login")
 	public Message createSession(HttpSession session) {
 		
@@ -29,15 +30,15 @@ public class SessionController {
 		return new Message("You've logged in!");
 	}
 	
-	@PostMapping(value = "/login")
-	public Message createSessionWithPost(HttpSession session) {
-		
-		User u = new User("McBob", true);
-		
-		session.setAttribute("user", u);
-		
-		return new Message("You've logged in!");
-	}
+	
+//	public Message createSessionWithPost(HttpSession session) {
+//		
+//		User u = new User("McBob", true);
+//		
+//		session.setAttribute("user", u);
+//		
+//		return new Message("You've logged in!");
+//	}
 	
 	@GetMapping(value = "/logout")
 	public Message invalidateSession(HttpSession session) {
@@ -61,6 +62,22 @@ public class SessionController {
 		}
 		
 		return u; //either fakey fake or an actual user!
+	}
+	
+	@GetMapping(value = "/checkSessionBoolean")
+	public Boolean validateWithBoolean(HttpSession session) {
+		
+		Boolean activeSession = false;
+		
+		if(session.getAttribute("user") == null) {
+			//login method was not reached first or they've logged out already!
+			activeSession = false;
+		}else {
+			activeSession = true;
+		}
+		
+		return activeSession;
+		
 	}
 
 }

@@ -1,4 +1,6 @@
+
 import { Component, OnInit } from '@angular/core';
+import { Router, RouterPreloader } from '@angular/router';
 import { AjaxSessionService } from '../ajax-session.service';
 
 @Component({
@@ -12,23 +14,32 @@ export class LandingPageComponent implements OnInit {
   loginMessage: string = "";
   logoutMessage: string = "";
 
-  firstButton(){
-    // this.loginMessage += this.loginMessage;
+  // firstButton(){
+  //   // this.loginMessage += this.loginMessage;
 
-    this.ajaxSession.loginRequest().subscribe(
+  //   this.router.navigate(['/secret']);
 
-        message => {
-          this.loginMessage += " " + message.message;
-        }      
-    )
-  }
+  //   // this.ajaxSession.loginRequest().subscribe(
+
+  //   //     message => {
+          
+  //   //       this.loginMessage += " " + message.message;
+          
+  //   //     }      
+  //   // )
+  // }
 
   firstButtonWithPost(){
     // this.loginMessage += this.loginMessage;
 
+    
+
     this.ajaxSession.loginRequestWithPost().subscribe(
 
         response => { //the message is now the entire response!
+
+          this.router.navigate(['/secret']);
+         
           this.loginMessage += " " + response.body?.message;
         }      
     )
@@ -39,6 +50,7 @@ export class LandingPageComponent implements OnInit {
     this.ajaxSession.logoutRequest().subscribe(
 
       message => {
+        this.router.navigate(['']);
         this.logoutMessage += " " + message.message;
       }
     )
@@ -54,7 +66,7 @@ export class LandingPageComponent implements OnInit {
     )
   }
 
-  constructor(private ajaxSession: AjaxSessionService) { }
+  constructor(private ajaxSession: AjaxSessionService,private router:Router) { }
 
   ngOnInit(): void {
   }

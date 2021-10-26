@@ -18,8 +18,6 @@ export interface User{
 })
 export class AjaxSessionService {
 
-  
-
   constructor(private myHttpClient: HttpClient) { }
 
   loginRequest(): Observable<Message>{
@@ -51,5 +49,9 @@ export class AjaxSessionService {
 
   infoRequest(): Observable<User>{
     return this.myHttpClient.get<User>("http://localhost:9000/checkSession",{withCredentials: true});
+  }
+
+  booleanRequest(): Observable<boolean>{
+    return this.myHttpClient.get<boolean>("http://localhost:9000/checkSessionBoolean",{withCredentials: true});
   }
 }
