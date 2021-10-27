@@ -1,0 +1,28 @@
+Monolithic Application: 
+	In an enterprise application we have a controller, service and a database/dao level. 
+	Frontend, Middle end (service logic) and Persistence layer.
+	Monolithic application will have all of these inside of it, i.e. self contained. 
+	
+	Problems of monolithic applications: 
+		Difficulty to (horizontally) scale.
+		Single point of failure issues. 
+		Tightly coupled. 
+
+	Advantages of monolitic application?
+		Easy to create and deploy. 
+
+SOA vs Microservices? 
+	SOA follows a coarse grain style vs microservices that follow a fine grain style.
+	Narrowing down services to single responsibility services. Each service will communicate
+	with each other service to complete an action. (MS are very very chatty) 
+
+	
+Todays example, I'm not using anything beyond Spring Boot tools. 
+	Today we will be using Spring Actuator and Some Dev profiles.  
+
+
+Problems with logistics: 
+	
+	I don't know where my services are and how healthy they are. -- Service Registry 
+	I don't have a single point of failure (kind of) but I can't redirect my services to services that are working. -- Hystrix 
+	We don't have a single unified port to access our services. -- Zuul & Ribbon
