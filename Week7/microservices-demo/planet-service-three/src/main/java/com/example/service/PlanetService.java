@@ -26,22 +26,21 @@ public class PlanetService {
 		
 		URI uri = URI.create("http://localhost:7100/api/planets");
 		
-//		List<LinkedHashMap<String, String>> allThePlanets = this.restTemplate.getForObject(uri, List.class);
-		
+		//Grabbing an array instead of a list, so Jackson knows to turn it into a Planet object and not a LinkedHashMap object
 		Planet[] allThePlanets = this.restTemplate.getForObject(uri, Planet[].class);
 		
-		
+		//Add the planet list
 		List<Planet> rockyPlanets = new ArrayList<>();
 		
+		//Filtering through the array, if rocky we add it to the rockyPlanets List
 		for(Planet p: allThePlanets) {
 			if(p.isRocky()) {
 				rockyPlanets.add(p);
 			}
 		}
 		
-//		allThePlanets.add(new Planet(9,"Pluto",true,0));
-		
-		// We're not grabbing rocky planets, instead we're just going to add pluto to it as well!
+		//We will also add Pluto
+		rockyPlanets.add(new Planet(9,"Pluto",true,0));
 		
 		
 		return rockyPlanets;
