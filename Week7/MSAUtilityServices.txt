@@ -1,0 +1,57 @@
+To Get Conssul working: 
+	Instal consul
+	run consul: "consul agent -dev"
+
+	For our projects :
+		Add consul dependency 
+		Add a property field to our project
+
+Consul: (Service Registry)
+	Problem: As a developer or maintainer, I want a simple way to track all of our services. 
+	
+	Service-Registry provides us a nice way of keeping track of all of our services. 
+
+	It utilises the client-service's actuator endpoints. Sending http requests to the endpoints. 
+	Consul will do a "heart-beat" every so often, to check whether each service is up and healthy. 
+
+	(Before Consul we had Eureka, Eureka was itself a Spring bot project that was mainatined 
+		by Netflix. 
+
+
+Netflix OSS stack: 
+	Zuul: (Unifiied API gateway)
+		problem: our eco-system are split into multiple ports/services
+		We don't want our users or even other developers to know that and to navigate manually
+		to different services. 
+
+		Provide a single point of access to multiple services. 
+
+		"Zuul is an edge service taht proxies requests to multiple backing services. 
+		IT provides a unifed "front door" to our system. Which allows a browser, mobile app or
+		any other example of user interfaces to consume services from multiple hosts. 
+		IT means we don't need to manage cross-orogin resoure sharing and each service doesn't
+		have to authenticate each other."
+
+
+	Ribbon: (load balancer)
+		problem: How to control traffic to my services to make sure a single instance isn't
+			overwhelmed
+
+		Ribbon is a load balancer. It routes traffic to the appropriate services. Other services
+		like Zuul can integrate into their own routing services. 
+
+	Hystrix: (circuit breaker)
+		problem: What happens if one of our services is down. (Due to an outage)
+		
+		Hystrix is designed to stop cascading failures and enable resilience in a distributed
+		system. 
+
+		"Hystrix is a latency and fault tolerance design to isolate points of access to remote
+		systems and services. Stop cascading failures and enables reslilience in complex distributed 
+		systems where failure is inevitable"
+
+	RabbitMQ: (messaging queue)
+		problem: now that I have multiple servcies constantly communicating with each other, 
+			how do I stop a service being overwhelmed by multiple different requests. 
+
+

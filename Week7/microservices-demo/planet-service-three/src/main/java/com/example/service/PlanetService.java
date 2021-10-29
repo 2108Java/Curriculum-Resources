@@ -2,13 +2,13 @@ package com.example.service;
 
 import java.net.URI;
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.example.models.Planet;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 @Service
 public class PlanetService {
@@ -22,9 +22,11 @@ public class PlanetService {
 		this.restTemplate = restTemplate;
 	}
 	
+	//With riky methods, like communicating with a service we want to have a fallback method
+	@HystrixCommand(fallbackMethod = "securePlanetMethod")
 	public List<Planet> getRockyPlanets(){
 		
-		URI uri = URI.create("http://localhost:7100/api/planets");
+		URI uri = URI.create("http://localhost:9100/api/planets");
 		
 		//Grabbing an array instead of a list, so Jackson knows to turn it into a Planet object and not a LinkedHashMap object
 		Planet[] allThePlanets = this.restTemplate.getForObject(uri, Planet[].class);
@@ -46,4 +48,16 @@ public class PlanetService {
 		return rockyPlanets;
 	}
 
+	@HystrixCommand(fallbackMethod = "evenMoreSecure")
+	public List<Planet> securePlanetMethod(){
+		List<Planet> rockyPlanets = new ArrayList<>();
+		rockyPlanets.add(new Planet(1, "Secure Planet", false, 0));
+		
+		return rockyPlanets;
+	}
+	
+	public List<Planet> evenMoreSecure(){
+		return null;
+	}
+	
 }

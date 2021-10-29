@@ -3,6 +3,7 @@ package com.example.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -33,6 +34,14 @@ public class PlanetController {
 		planets.add(new Planet(8, "Uranus", false, 0));
 		
 		return planets;
+	}
+	
+	@Value("${server.port}")
+	private String serverPort;
+	
+	@GetMapping("/test/hello")
+	public String sayHello() {
+		return "Hello from: " + serverPort; 
 	}
 	
 	@GetMapping(value = "/planets", produces = "application/json")

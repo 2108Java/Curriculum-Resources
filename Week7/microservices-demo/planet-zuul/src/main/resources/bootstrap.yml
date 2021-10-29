@@ -1,0 +1,21 @@
+
+server:
+  port: 9100
+  
+spring:
+  application:
+    name: planet-zuul
+
+#Zuul specific configuration 
+#Zuul has a in built load balancer, called Ribbon. 
+#Ribbon follows a round robin style of routing. 
+zuul:
+  ignored-patterns:  - /actuator/** 
+  routes: #Specify which "url's'" navigate to which services     all-planets: 
+      path: "/api/planets"
+      service-id: planet-two 
+      strip-prefix: false 
+    bread-pudding: 
+      path: "/api/planets/rocky"
+      service-id: planet-three
+      strip-prefix: false
